@@ -1,11 +1,11 @@
-import { ErrorMessage, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 
 import { TextInput } from "./TextInput";
 import { validationSchema } from "./validationSchema";
-import { inputValueName } from "./inputValueName";
+import { inputValueName } from "common";
 import { useHandleSubmit } from "./useHandleSubmit";
 
-const SearchForm = () => {
+const SearchForm = ({ children }) => {
   const handleSubmit = useHandleSubmit(inputValueName);
 
   return (
@@ -18,20 +18,16 @@ const SearchForm = () => {
     >
       <>
         <Form>
-
           <TextInput
             aria-label="Search Wikipedia"
             name={inputValueName}
             type="text"
             placeholder="Search Wikipedia"
           />
-          <ErrorMessage name={inputValueName} />
-
-          <button type="submit">Search</button>
-
+          {children}
         </Form>
       </>
-    </Formik >
+    </Formik>
   );
 };
 
