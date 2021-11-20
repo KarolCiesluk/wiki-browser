@@ -29,6 +29,8 @@ function App() {
             element={<SearchHistory />}
           />
 
+          <Route path="*" element={<div>Not Found</div>} />
+
         </Routes>
       </Layout>
     </Router>
