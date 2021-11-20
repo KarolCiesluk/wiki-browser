@@ -1,7 +1,7 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Layout } from "./Layout";
-import { Article, ArticleList, Home, SearchHistory } from "features";
+import { Article, ArticleList, SearchForm, SearchHistory } from "features";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
 
           <Route
             path="/"
-            element={<Home />}
+            element={<SearchForm />}
           />
 
           <Route
