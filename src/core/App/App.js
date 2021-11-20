@@ -1,17 +1,17 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Layout } from "./Layout";
-import { Article, ArticleList, SearchForm, SearchHistory } from "features";
+import { Article, ArticleList, Home, SearchHistory } from "features";
 
 function App() {
   return (
-    <Layout>
-      <Router>
+    <Router>
+      <Layout>
         <Routes>
 
           <Route
             path="/"
-            element={<SearchForm />}
+            element={<Home />}
           />
 
           <Route
@@ -30,8 +30,8 @@ function App() {
           />
 
         </Routes>
-      </Router>
-    </Layout>
+      </Layout>
+    </Router>
   );
 }
 
