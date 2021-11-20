@@ -1,7 +1,12 @@
 const Home = () => {
   return (
     <div>
-      Home Page
+      <form>
+        <label>
+          <input placeholder="Search Wikipedia" />
+          <button type="submit">Search</button>
+        </label>
+      </form>
     </div>
   );
 };
