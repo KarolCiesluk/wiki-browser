@@ -6,7 +6,7 @@ import { inputValueName } from "./inputValueName";
 import { useHandleSubmit } from "./useHandleSubmit";
 
 const SearchForm = () => {
-  const handleSubmit = useHandleSubmit();
+  const handleSubmit = useHandleSubmit(inputValueName);
 
   return (
     <Formik
@@ -31,7 +31,7 @@ const SearchForm = () => {
 
         </Form>
       </>
-    </Formik>
+    </Formik >
   );
 };
 

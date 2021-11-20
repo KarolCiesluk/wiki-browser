@@ -2,16 +2,18 @@ import { useNavigate } from "react-router";
 
 import { buildQueryString } from "./buildQueryString";
 
-export const useHandleSubmit = () => {
+const searchQueryName = "search";
+
+export const useHandleSubmit = (inputValueName) => {
   const navigate = useNavigate();
 
-  return (
-    { inputValue }
-  ) => {
-    if (inputValue.trim()) {
+  return (values) => {
+    const value = values[inputValueName].trim();
+
+    if (value) {
       const queryString = buildQueryString({
-        key: "search",
-        value: inputValue.trim(),
+        key: searchQueryName,
+        value,
       });
 
       navigate(`articles?${queryString}`);
