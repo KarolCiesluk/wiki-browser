@@ -1,7 +1,6 @@
 import { ErrorMessage } from "formik";
 
-import { SearchForm } from "features";
-import { inputValueName } from "common";
+import { inputValueName, SearchForm } from "common";
 
 const Home = () => {
   return (
