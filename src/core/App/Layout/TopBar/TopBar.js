@@ -1,17 +1,20 @@
 import { useLocation } from "react-router";
 
 import SearchForm from "common/SearchForm";
+import Container from "../Container";
 
 const TopBar = () => {
   const { pathname } = useLocation();
 
   return (
     <header>
-      Header
-      {
-        pathname !== "/" &&
-        <SearchForm />
-      }
+      <Container as="div">
+        Header
+        {
+          pathname !== "/" &&
+          <SearchForm />
+        }
+      </Container>
     </header>
   );
 };
