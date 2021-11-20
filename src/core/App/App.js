@@ -1,13 +1,37 @@
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+
+import { Layout } from "./Layout";
+import { Article, ArticleList, Home, SearchHistory } from "features";
+
 function App() {
   return (
-    <div>
-      <form>
-        <label>
-          <input placeholder="Search Wikipedia" />
-          <button type="submit">Search</button>
-        </label>
-      </form>
-    </div>
+    <Layout>
+      <Router>
+        <Routes>
+
+          <Route
+            path="/"
+            element={<Home />}
+          />
+
+          <Route
+            path="article"
+            element={<Article />}
+          />
+
+          <Route
+            path="articles"
+            element={<ArticleList />}
+          />
+
+          <Route
+            path="history"
+            element={<SearchHistory />}
+          />
+
+        </Routes>
+      </Router>
+    </Layout>
   );
 }
 
