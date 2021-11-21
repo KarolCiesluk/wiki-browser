@@ -1,8 +1,15 @@
 import { ErrorMessage } from "formik";
+import { useEffect, useRef } from "react";
 
 import { inputValueName, SearchForm, TextInput } from "common";
 
 const Home = () => {
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   return (
     <SearchForm>
       <TextInput
@@ -10,22 +17,12 @@ const Home = () => {
         name={inputValueName}
         type="text"
         placeholder="Search Wikipedia"
+        ref={inputRef}
       />
       <ErrorMessage name={inputValueName} />
       <button type="submit">Search</button>
     </SearchForm>
   );
 };
-
-// import styled, { css } from "styled-components";
-
-// const Input = styled.input`
-//   opacity: 0;
-//   transition: opacity 1s;
-
-//   ${({ show }) => show && css`
-//     opacity: 1;
-//   `}
-// `;
 
 export default Home;
