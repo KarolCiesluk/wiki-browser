@@ -1,6 +1,5 @@
 import { Form, Formik } from "formik";
 
-import { TextInput } from "./TextInput";
 import { validationSchema } from "./validationSchema";
 import { inputValueName } from "common";
 import { useHandleSubmit } from "./useHandleSubmit";
@@ -18,12 +17,6 @@ const SearchForm = ({ children }) => {
     >
       <>
         <Form>
-          <TextInput
-            aria-label="Search Wikipedia"
-            name={inputValueName}
-            type="text"
-            placeholder="Search Wikipedia"
-          />
           {children}
         </Form>
       </>

@@ -1,7 +1,7 @@
 import { useLocation } from "react-router";
 
-import SearchForm from "common/SearchForm";
 import Container from "../Container";
+import { inputValueName, SearchForm, TextInput } from "common";
 
 const TopBar = () => {
   const { pathname } = useLocation();
@@ -12,7 +12,14 @@ const TopBar = () => {
         Header
         {
           pathname !== "/" &&
-          <SearchForm />
+          <SearchForm>
+            <TextInput
+              aria-label="Search Wikipedia"
+              name={inputValueName}
+              type="text"
+              placeholder="Search Wikipedia"
+            />
+          </SearchForm>
         }
       </Container>
     </header>
