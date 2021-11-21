@@ -1,8 +1,7 @@
+import inputValueName from "common/inputValueName";
 import * as Yup from "yup";
 
-import { inputValueName } from "common";
 import { errorText } from "./errorText";
-
 
 export const validationSchema = Yup.object({
   [inputValueName]: Yup.string().trim()
