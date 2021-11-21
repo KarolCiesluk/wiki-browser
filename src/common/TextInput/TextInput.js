@@ -1,17 +1,12 @@
+import { forwardRef } from "react";
 import { useField } from "formik";
-import { useEffect, useRef } from "react";
 
-const TextInput = ({ label, ...props }) => {
+const TextInput = forwardRef(({ label, ...props }, ref) => {
   const [field] = useField(props);
-  const inputRef = useRef();
-
-  useEffect(() => {
-    inputRef.current.focus();
-  });
 
   return (
-    <input ref={inputRef} {...field} {...props} />
+    <input ref={ref} {...field} {...props} />
   );
-};
+});
 
 export default TextInput;
