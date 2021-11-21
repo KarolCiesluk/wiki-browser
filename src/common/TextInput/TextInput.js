@@ -86,13 +86,13 @@ const TextInput = forwardRef(({ label, ...props }, ref) => {
         id="suggestions"
       />
 
-      {
-        showSuggestions &&
-        suggestions.map(suggestion =>
+      {showSuggestions &&
+        suggestions.map(suggestion => (
           <option
             onClick={() => handleSuggestionClick(suggestion.excerpt)}
             key={suggestion.id}>{suggestion.excerpt}
-          </option>)
+          </option>
+        ))
       }
     </>
   );
