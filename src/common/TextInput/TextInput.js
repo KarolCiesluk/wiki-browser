@@ -1,5 +1,6 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useField } from "formik";
+import { Autocomplete, TextField } from "@mui/material";
 
 const API_URL = "https://en.wikipedia.org/w/rest.php/v1/";
 
@@ -11,7 +12,7 @@ const useDebounce = (value, delay, setSuggestions) => {
       clearTimeout(timer);
     }
 
-    const searchForSuggestions = async (value) => {
+    const searchForSuggestions = async () => {
       if (!value || value.trim() === "") {
         setSuggestions([]);
         return;
@@ -21,7 +22,8 @@ const useDebounce = (value, delay, setSuggestions) => {
         .then(response => response.json())
         .then(data => {
           setSuggestions(data.pages);
-        });
+        })
+        .catch(error => console.error(error));
     };
 
     const timeoutId = setTimeout(() => {
@@ -32,68 +34,44 @@ const useDebounce = (value, delay, setSuggestions) => {
 
     return () => {
       clearTimeout(timeoutId);
-    }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 };
 
-const useHandleBlur = (onBlur, setShowSuggestions) => {
-  const timeoutRef = useRef();
-
-  useEffect(() => {
-    return () => {
-      clearTimeout(timeoutRef.current);
-    };
-  }, []);
-
-  return (event) => {
-    onBlur(event);
-
-    const timeoutId = setTimeout(() => {
-      setShowSuggestions((showSuggestions) => !showSuggestions);
-    }, 100);
-
-    timeoutRef.current = timeoutId;
-  };
-};
-
-const TextInput = forwardRef(({ label, ...props }, ref) => {
+const TextInput = (props => {
   const [suggestions, setSuggestions] = useState([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
-  const [{ onBlur, ...restOfField }, _, { setValue }] = useField(props);
+  const [
+    { value, onChange },
+    { touched, error },
+    { setValue }
+  ] = useField(props);
 
-  const handleBlur = useHandleBlur(onBlur, setShowSuggestions);
+  useDebounce(value, 500, setSuggestions);
 
-  const handleFocus = () => {
-    setShowSuggestions(!showSuggestions);
+  const handleAutocompleteChange = (_, values) => {
+    setValue(values);
   };
-
-  const handleSuggestionClick = (suggestionValue) => {
-    setValue(suggestionValue);
-  };
-
-  useDebounce(restOfField.value, 500, setSuggestions);
 
   return (
     <>
-      <input
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        autoComplete="off"
-        ref={ref}
-        {...restOfField}
-        {...props}
-        id="suggestions"
+      <Autocomplete
+        autoComplete
+        disablePortal
+        onChange={handleAutocompleteChange}
+        options={suggestions.map(({ excerpt }) => excerpt)}
+        sx={{ width: 300 }}
+        renderInput={params => (
+          <TextField
+            value={value}
+            onChange={onChange}
+            error={touched && !!error}
+            helperText={touched && error}
+            {...params}
+            {...props}
+          />
+        )}
       />
-
-      {showSuggestions &&
-        suggestions.map(suggestion => (
-          <option
-            onClick={() => handleSuggestionClick(suggestion.excerpt)}
-            key={suggestion.id}>{suggestion.excerpt}
-          </option>
-        ))
-      }
     </>
   );
 });

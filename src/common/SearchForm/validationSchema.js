@@ -5,5 +5,5 @@ import { errorText } from "./errorText";
 
 export const validationSchema = Yup.object({
   [inputValueName]: Yup.string().trim()
-    .required(errorText),
+    .required(errorText)
 });

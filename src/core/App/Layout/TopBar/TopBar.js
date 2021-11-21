@@ -14,10 +14,10 @@ const TopBar = () => {
           pathname !== "/" &&
           <SearchForm>
             <TextInput
-              aria-label="Search Wikipedia"
               name={inputValueName}
               type="text"
-              placeholder="Search Wikipedia"
+              label="Search Wikipedia"
+              variant="standard"
             />
           </SearchForm>
         }
