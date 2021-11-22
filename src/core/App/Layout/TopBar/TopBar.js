@@ -2,27 +2,30 @@ import { useLocation } from "react-router";
 
 import Container from "../Container";
 import { inputValueName, SearchForm, TextInput } from "common";
+import { Header } from "./styled";
 
 const TopBar = () => {
   const { pathname } = useLocation();
 
   return (
-    <header>
+    <Header>
       <Container as="div">
-        Header
-        {
-          pathname !== "/" &&
-          <SearchForm>
-            <TextInput
-              name={inputValueName}
-              type="text"
-              label="Search Wikipedia"
-              variant="standard"
-            />
-          </SearchForm>
-        }
+        <div>
+          Header
+          {
+            pathname !== "/" &&
+            <SearchForm>
+              <TextInput
+                name={inputValueName}
+                type="text"
+                label="Search Wikipedia"
+                variant="standard"
+              />
+            </SearchForm>
+          }
+        </div>
       </Container>
-    </header>
+    </Header>
   );
 };
 
