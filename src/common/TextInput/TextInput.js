@@ -31,25 +31,23 @@ const TextInput = (props => {
   useClearDataOnLeave({ clearAction: clearData });
 
   return (
-    <>
-      <Autocomplete
-        autoComplete
-        disablePortal
-        onChange={handleAutocompleteChange}
-        options={getOptions()}
-        sx={{ width: 300 }}
-        renderInput={params => (
-          <TextField
-            value={value}
-            onChange={handleInputChange}
-            error={touched && !!error}
-            helperText={touched && error}
-            {...params}
-            {...props}
-          />
-        )}
-      />
-    </>
+    <Autocomplete
+      autoComplete
+      disablePortal
+      onChange={handleAutocompleteChange}
+      options={getOptions()}
+      // sx={{ width: 300 }}
+      renderInput={params => (
+        <TextField
+          value={value}
+          onChange={handleInputChange}
+          error={touched && !!error}
+          // helperText={touched && error}
+          {...params}
+          {...props}
+        />
+      )}
+    />
   );
 });
 
