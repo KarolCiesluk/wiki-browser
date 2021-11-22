@@ -1,22 +1,34 @@
-import { useState } from "react";
 import { useField } from "formik";
 import { Autocomplete, TextField } from "@mui/material";
+import { useSelector } from "react-redux";
 
-import { useDebounce } from "./useDebounce";
+import {
+  selectSuggestionsState,
+  clearData
+} from "./inputSlice";
+import { useHandleInputChange } from "./useHandleInputChange";
+import { useClearDataOnLeave } from "./useClearDataOnLeave";
 
 const TextInput = (props => {
-  const [suggestions, setSuggestions] = useState([]);
+  const suggestions = useSelector(selectSuggestionsState);
+
   const [
     { value, onChange },
     { touched, error },
     { setValue }
   ] = useField(props);
 
-  useDebounce(value, 500, setSuggestions);
+  const handleInputChange = useHandleInputChange(onChange);
 
   const handleAutocompleteChange = (_, values) => {
     setValue(values);
   };
+
+  const getOptions = () => {
+    return suggestions?.map(({ excerpt }) => excerpt) || [];
+  };
+
+  useClearDataOnLeave({ clearAction: clearData });
 
   return (
     <>
@@ -24,12 +36,12 @@ const TextInput = (props => {
         autoComplete
         disablePortal
         onChange={handleAutocompleteChange}
-        options={suggestions.map(({ excerpt }) => excerpt)}
+        options={getOptions()}
         sx={{ width: 300 }}
         renderInput={params => (
           <TextField
             value={value}
-            onChange={onChange}
+            onChange={handleInputChange}
             error={touched && !!error}
             helperText={touched && error}
             {...params}
