@@ -15,11 +15,9 @@ const SearchForm = ({ children }) => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      <>
-        <Form>
-          {children}
-        </Form>
-      </>
+      <Form>
+        {children}
+      </Form>
     </Formik>
   );
 };
