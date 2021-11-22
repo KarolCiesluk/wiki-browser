@@ -1,5 +1,3 @@
-import { ErrorMessage } from "formik";
-
 import { inputValueName, SearchForm, TextInput } from "common";
 
 const Home = () => {
@@ -11,7 +9,6 @@ const Home = () => {
         type="text"
         label="Search Wikipedia"
       />
-      <ErrorMessage name={inputValueName} />
       <button type="submit">Search</button>
     </SearchForm>
   );
