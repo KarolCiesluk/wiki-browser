@@ -1,15 +1,19 @@
+// import { Button } from "@mui/material";
 import { inputValueName, SearchForm, TextInput } from "common";
+import { Button, Wrapper } from "./styled";
 
 const Home = () => {
   return (
     <SearchForm>
-      <TextInput
-        autoFocus
-        name={inputValueName}
-        type="text"
-        label="Search Wikipedia"
-      />
-      <button type="submit">Search</button>
+      <Wrapper>
+        <TextInput
+          autoFocus
+          name={inputValueName}
+          type="text"
+          label="Search Wikipedia*"
+        />
+        <Button type="submit">Search</Button>
+      </Wrapper>
     </SearchForm>
   );
 };
