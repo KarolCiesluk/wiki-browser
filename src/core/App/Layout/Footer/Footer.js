@@ -1,12 +1,13 @@
 import Container from "../Container";
+import { Copyright, StyledFooter } from "./styled";
 
 const Footer = () => {
   return (
-    <footer>
-      <Container as="div">
-        <p>© 2021 | Coded by Karol Cieśluk</p>
+    <StyledFooter>
+      <Container as="div" footer>
+        <Copyright>© 2021 | Coded by Karol Cieśluk</Copyright>
       </Container>
-    </footer>
+    </StyledFooter>
   );
 };
 
