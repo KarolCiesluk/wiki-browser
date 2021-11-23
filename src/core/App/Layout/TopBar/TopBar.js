@@ -1,9 +1,8 @@
 import { useLocation } from "react-router";
-import { Link } from "react-router-dom";
 
 import Container from "../Container";
 import { inputValueName, SearchForm, TextInput } from "common";
-import { FormWrapper, Header, StyledWikiIcon, TopBarGrid } from "./styled";
+import { FormWrapper, Header, LogoLink, StyledWikiIcon, TopBarGrid } from "./styled";
 import { Navigation } from "./Navigation";
 
 const TopBar = () => {
@@ -14,9 +13,9 @@ const TopBar = () => {
       <Container as="div">
         <TopBarGrid>
 
-          <Link to="/">
+          <LogoLink to="/">
             <StyledWikiIcon />
-          </Link>
+          </LogoLink>
 
           {
             pathname !== "/" &&
@@ -34,8 +33,6 @@ const TopBar = () => {
           }
 
           <Navigation />
-
-
 
         </TopBarGrid>
       </Container>
