@@ -9,7 +9,7 @@ import {
 import { useHandleInputChange } from "./useHandleInputChange";
 import { useClearDataOnLeave } from "./useClearDataOnLeave";
 
-const TextInput = (props => {
+const TextInput = (({ validate, topBar, ...props }) => {
   const suggestions = useSelector(selectSuggestionsState);
 
   const [
@@ -36,13 +36,14 @@ const TextInput = (props => {
       disablePortal
       onChange={handleAutocompleteChange}
       options={getOptions()}
-      // sx={{ width: 300 }}
+      sx={{ width: topBar && 250 }}
       renderInput={params => (
         <TextField
           value={value}
+          inputProps={{ fontWeight: "bold" }}
           onChange={handleInputChange}
-          error={touched && !!error}
-          helperText={touched && error}
+          error={validate && touched && !!error}
+          helperText={validate && touched && error}
           {...params}
           {...props}
         />

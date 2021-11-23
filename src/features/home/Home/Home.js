@@ -10,6 +10,7 @@ const Home = () => {
           name={inputValueName}
           type="text"
           label="Search Wikipedia*"
+          validate
         />
         <Button type="submit">Search</Button>
       </Wrapper>
