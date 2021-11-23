@@ -1,10 +1,14 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Container = styled.main`
   max-width: 900px;
   margin: auto;
   padding: 12px;
   width: 100%;
+
+  ${({ footer }) => footer && css`
+    text-align: center;
+  `}
 `;
 
 export default Container;
