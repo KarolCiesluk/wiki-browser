@@ -32,6 +32,7 @@ const TextInput = (({ validate, ...props }) => {
 
   return (
     <Autocomplete
+      id="searchAutocomplete"
       autoComplete
       disablePortal
       onChange={handleAutocompleteChange}
