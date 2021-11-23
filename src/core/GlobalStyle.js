@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     *, ::after, ::before {
         box-sizing: inherit;
     }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
 `;
 
 export default GlobalStyle;
