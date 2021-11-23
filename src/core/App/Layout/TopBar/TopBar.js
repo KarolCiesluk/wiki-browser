@@ -1,4 +1,5 @@
 import { useLocation } from "react-router";
+import { AiOutlineSearch } from 'react-icons/ai';
 
 import Container from "../Container";
 import { inputValueName, SearchForm, TextInput } from "common";
@@ -6,6 +7,8 @@ import {
   FormWrapper,
   Header,
   LogoLink,
+  SearchButton,
+  SearchGrid,
   StyledWikiIcon,
   TopBarGrid
 } from "./styled";
@@ -27,13 +30,20 @@ const TopBar = () => {
             pathname !== "/" &&
             <FormWrapper>
               <SearchForm>
-                <TextInput
-                  name={inputValueName}
-                  type="text"
-                  label="Search Wikipedia"
-                  variant="standard"
-                  topBar
-                />
+                <SearchGrid>
+
+                  <TextInput
+                    name={inputValueName}
+                    type="text"
+                    label="Search Wikipedia"
+                    variant="standard"
+                  />
+
+                  <SearchButton type="submit">
+                    <AiOutlineSearch style={{ width: 16, height: "auto", color: "#666666" }} />
+                  </SearchButton>
+
+                </SearchGrid>
               </SearchForm>
             </FormWrapper>
           }
@@ -42,7 +52,7 @@ const TopBar = () => {
 
         </TopBarGrid>
       </Container>
-    </Header>
+    </Header >
   );
 };
 

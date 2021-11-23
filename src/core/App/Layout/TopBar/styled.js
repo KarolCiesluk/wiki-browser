@@ -44,3 +44,24 @@ export const FormWrapper = styled.div`
   }
 `;
 
+export const SearchGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  margin-bottom: 14px;
+`;
+
+export const SearchButton = styled.button`
+  border: none;
+  background: none;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: #eaeef3;
+  }
+`;
+
