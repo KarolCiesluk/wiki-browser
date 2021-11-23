@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const Header = styled.h1`
+  display: inline-block;
+  color: #0e1111;
+  border-bottom: 2px dashed #1483fb;
+  padding-bottom: 4px;
+`;
+
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
