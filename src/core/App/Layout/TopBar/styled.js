@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { FaWikipediaW } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import { FaWikipediaW } from 'react-icons/fa';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 export const Header = styled.header`
   border-bottom: 1px solid #EAEEF3;
@@ -54,7 +55,7 @@ export const SearchGrid = styled.div`
 export const SearchButton = styled.button`
   border: none;
   background: none;
-  padding: 8px;
+  padding: 7px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -63,5 +64,11 @@ export const SearchButton = styled.button`
   &:hover {
     background-color: #eaeef3;
   }
+`;
+
+export const StyledSearchIcon = styled(AiOutlineSearch)`
+  width: 14px;
+  height: auto;
+  color: #666666;
 `;
 
