@@ -36,11 +36,9 @@ const TextInput = (({ validate, topBar, ...props }) => {
       disablePortal
       onChange={handleAutocompleteChange}
       options={getOptions()}
-      sx={{ width: topBar && 250 }}
       renderInput={params => (
         <TextField
           value={value}
-          inputProps={{ fontWeight: "bold" }}
           onChange={handleInputChange}
           error={validate && touched && !!error}
           helperText={validate && touched && error}
