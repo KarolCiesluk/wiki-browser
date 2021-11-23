@@ -42,7 +42,7 @@ const TextInput = (props => {
           value={value}
           onChange={handleInputChange}
           error={touched && !!error}
-          // helperText={touched && error}
+          helperText={touched && error}
           {...params}
           {...props}
         />
