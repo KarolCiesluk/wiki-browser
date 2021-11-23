@@ -9,7 +9,7 @@ import {
 import { useHandleInputChange } from "./useHandleInputChange";
 import { useClearDataOnLeave } from "./useClearDataOnLeave";
 
-const TextInput = (({ validate, topBar, ...props }) => {
+const TextInput = (({ validate, ...props }) => {
   const suggestions = useSelector(selectSuggestionsState);
 
   const [
