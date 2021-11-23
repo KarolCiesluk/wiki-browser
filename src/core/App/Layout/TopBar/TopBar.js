@@ -2,7 +2,13 @@ import { useLocation } from "react-router";
 
 import Container from "../Container";
 import { inputValueName, SearchForm, TextInput } from "common";
-import { FormWrapper, Header, LogoLink, StyledWikiIcon, TopBarGrid } from "./styled";
+import {
+  FormWrapper,
+  Header,
+  LogoLink,
+  StyledWikiIcon,
+  TopBarGrid
+} from "./styled";
 import { Navigation } from "./Navigation";
 
 const TopBar = () => {
