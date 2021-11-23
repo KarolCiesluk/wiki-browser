@@ -14,9 +14,8 @@ const TopBar = () => {
       <Container as="div">
         <TopBarGrid>
 
-          <Link to="/" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+          <Link to="/">
             <StyledWikiIcon />
-            Wiki browser
           </Link>
 
           {
