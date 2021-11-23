@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 
 export const StyledNavigation = styled.nav`
   grid-column: 3;
+  justify-self: end;
+
+  @media(max-width: 600px) {
+    grid-column: 2;
+    grid-row: 1;
+  }
 `;
 
 export const NavigationList = styled.ul`
