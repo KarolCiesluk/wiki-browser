@@ -30,6 +30,6 @@ export const {
   clearData
 } = inputSlice.actions;
 
-export const selectSuggestionsState = state => state.suggestions.suggestions;
+export const selectSuggestions = state => state.suggestions.suggestions;
 
 export default inputSlice.reducer;

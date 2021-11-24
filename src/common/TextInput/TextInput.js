@@ -3,14 +3,14 @@ import { Autocomplete, TextField } from "@mui/material";
 import { useSelector } from "react-redux";
 
 import {
-  selectSuggestionsState,
+  selectSuggestions,
   clearData
 } from "./inputSlice";
 import { useHandleInputChange } from "./useHandleInputChange";
 import { useClearDataOnLeave } from "./useClearDataOnLeave";
 
 const TextInput = (({ validate, ...props }) => {
-  const suggestions = useSelector(selectSuggestionsState);
+  const suggestions = useSelector(selectSuggestions);
 
   const [
     { value, onChange },
