@@ -5,13 +5,14 @@ import { AiOutlineSearch } from 'react-icons/ai';
 
 export const Header = styled.header`
   border-bottom: 1px solid #EAEEF3;
-  padding: 14px 0;
+  padding: 8px 0;
 `;
 
 export const TopBarGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-column-gap: 30px;
+  grid-row-gap: 8px;
   align-items: center;
   width: 100%;
 `;
@@ -33,7 +34,7 @@ export const StyledWikiIcon = styled(FaWikipediaW)`
 `;
 
 export const FormWrapper = styled.div`
-  align-self: start;
+  align-self: end;
   justify-self: end;
   min-width: 250px;
 
@@ -49,7 +50,7 @@ export const SearchGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: end;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 `;
 
 export const SearchButton = styled.button`
