@@ -9,7 +9,7 @@ import {
 import { useHandleInputChange } from "./useHandleInputChange";
 import { useClearDataOnLeave } from "./useClearDataOnLeave";
 
-const TextInput = (({ validate, placeholder, ...props }) => {
+const TextInput = (({ validate, ...props }) => {
   const suggestions = useSelector(selectSuggestionsState);
 
   const [
@@ -34,15 +34,14 @@ const TextInput = (({ validate, placeholder, ...props }) => {
     <Autocomplete
       autoComplete
       disablePortal
+      inputValue={value}
       onChange={handleAutocompleteChange}
       options={getOptions()}
       renderInput={params => (
         <TextField
-          value={value}
           onChange={handleInputChange}
           error={validate && touched && !!error}
           helperText={validate && touched && error}
-          placeholder={value || placeholder}
           {...params}
           {...props}
         />
