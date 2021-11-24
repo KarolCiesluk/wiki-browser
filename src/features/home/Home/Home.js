@@ -12,7 +12,7 @@ const Home = () => {
             autoFocus
             name={inputValueName}
             type="text"
-            label="Search Wikipedia*"
+            placeholder="Search Wikipedia*"
             validate
           />
           <Button type="submit">Search</Button>

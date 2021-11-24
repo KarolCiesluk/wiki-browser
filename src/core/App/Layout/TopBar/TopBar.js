@@ -35,7 +35,7 @@ const TopBar = () => {
                   <TextInput
                     name={inputValueName}
                     type="text"
-                    label="Search Wikipedia"
+                    placeholder="Search Wikipedia"
                     variant="standard"
                   />
 
