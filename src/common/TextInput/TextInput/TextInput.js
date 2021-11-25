@@ -4,9 +4,9 @@ import { useSelector } from "react-redux";
 
 import {
   actions, selectors
-} from "./inputSlice";
+} from "../textInputSlice";
 import { useHandleInputChange } from "./useHandleInputChange";
-import { useClearDataOnLeave } from "./useClearDataOnLeave";
+import { useClearDataOnLeave } from "../../useClearDataOnLeave";
 
 const TextInput = (({ validate, ...props }) => {
   const suggestions = useSelector(selectors.selectData);

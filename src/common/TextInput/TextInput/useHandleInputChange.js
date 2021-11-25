@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 
-import { actions } from "./inputSlice";
+import { actions } from "../textInputSlice";
 
 const SEARCH_DELAY = 500;
 
@@ -17,7 +17,7 @@ export const useHandleInputChange = onChange => {
 
     timeoutRef.current = setTimeout(() => {
       if (value && value.trim()) {
-        dispatch(actions.fetch(value))
+        dispatch(actions.fetch(value));
       } else {
         dispatch(actions.clear());
       }
