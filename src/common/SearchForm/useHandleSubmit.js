@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router";
 
+import { searchQueryName } from "common/searchQueryName";
 import { buildQueryString } from "./buildQueryString";
-
-const searchQueryName = "search";
 
 export const useHandleSubmit = (inputValueName) => {
   const navigate = useNavigate();
