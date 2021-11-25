@@ -1,10 +1,7 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 
-import {
-  fetchSuggestions,
-  clearData
-} from "./inputSlice";
+import { actions } from "./inputSlice";
 
 const SEARCH_DELAY = 500;
 
@@ -20,9 +17,9 @@ export const useHandleInputChange = onChange => {
 
     timeoutRef.current = setTimeout(() => {
       if (value && value.trim()) {
-        dispatch(fetchSuggestions(value))
+        dispatch(actions.fetch(value))
       } else {
-        dispatch(clearData());
+        dispatch(actions.clear());
       }
     }, SEARCH_DELAY);
   };
