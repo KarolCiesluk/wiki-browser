@@ -1,10 +1,13 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest, delay } from "redux-saga/effects";
 
 export function* listSaga({
   actions,
   getListData,
+  searchDelay,
 }) {
   function* fetchListHandler({ payload: value }) {
+    yield !!searchDelay && delay(searchDelay);
+
     try {
       const list = yield call(getListData, value);
       yield put(actions.fetchSuccess(list));
