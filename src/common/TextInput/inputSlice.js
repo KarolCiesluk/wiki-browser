@@ -1,35 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createListSlice } from "common/createListSlice";
 
-const initialState = {
-  suggestions: null,
-  status: "initial",
-};
+const {
+  actions,
+  selectors,
+  reducer
+} = createListSlice({ name: "suggestions" });
 
-const inputSlice = createSlice({
-  name: "suggestions",
-  initialState,
-  reducers: {
-    fetchSuggestions: state => {
-      state.status = "loading";
-    },
-    fetchSuggestionsSuccess: (state, { payload: suggestions }) => {
-      state.suggestions = suggestions.pages;
-      state.status = "success";
-    },
-    fetchSuggestionsError: state => {
-      state.status = "error";
-    },
-    clearData: () => initialState,
-  },
-});
-
-export const {
-  fetchSuggestions,
-  fetchSuggestionsSuccess,
-  fetchSuggestionsError,
-  clearData
-} = inputSlice.actions;
-
-export const selectSuggestions = state => state.suggestions.suggestions;
-
-export default inputSlice.reducer;
+export { actions, selectors };
+export default reducer;
