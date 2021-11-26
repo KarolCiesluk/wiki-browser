@@ -1,5 +1,5 @@
-import { inputValueName, SearchForm, TextInput } from "common";
-import { Button, Header, Wrapper } from "./styled";
+import { Header, inputValueName, SearchForm, TextInput } from "common";
+import { Button, Wrapper } from "./styled";
 
 const Home = () => {
   return (
