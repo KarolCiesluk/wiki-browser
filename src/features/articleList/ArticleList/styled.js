@@ -60,7 +60,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const Title = styled.h2`
-  word-break: word-break;
+  word-break: break-word;
 
   @media(max-width: 700px) {
     font-size: 20px;
