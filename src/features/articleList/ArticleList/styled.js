@@ -57,12 +57,20 @@ export const Image = styled.img`
 
 export const TextWrapper = styled.div`
   text-align: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Title = styled.h2`
   word-break: break-word;
+  line-height: 1;
 
   @media(max-width: 700px) {
     font-size: 20px;
   }
+`;
+
+export const Description = styled.p`
+  color: #949494;
+  line-height: 1.2;
 `;

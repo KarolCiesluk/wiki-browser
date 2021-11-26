@@ -7,6 +7,7 @@ import { selectors, actions } from "../articleListSlice";
 import { useQueryParameter } from "./useQueryParameter";
 import { useFetchOnPageLoad } from "./useFetchOnPageLoad";
 import {
+  Description,
   Image,
   ImageWrapper,
   List,
@@ -73,9 +74,9 @@ const ArticleList = () => {
                     {article.title}
                   </Title>
 
-                  <p>
+                  <Description>
                     {article.description}
-                  </p>
+                  </Description>
                 </TextWrapper>
 
               </StyledLink>
