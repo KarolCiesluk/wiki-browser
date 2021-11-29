@@ -1,11 +1,16 @@
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
-import { useClearDataOnLeave } from "common/useClearDataOnLeave";
-import { searchQueryName } from "common/searchQueryName";
+import { Content } from "./Content";
+import { Header } from "common";
+import { Pagination } from "./Pagination";
 import { selectors, actions } from "../articleListSlice";
+import { useClearDataOnLeave } from "common/useClearDataOnLeave";
 import { useQueryParameter } from "./useQueryParameter";
 import { useFetchOnPageLoad } from "./useFetchOnPageLoad";
+import { useList } from "./useList";
+import { useGoToFirstPageWhenListEmpty } from "./useGoToFirstPageWhenListEmpty";
+import { searchQueryName } from "common/searchQueryName";
+import placeholder from "./placeholder.svg";
 import {
   Description,
   Image,
@@ -16,35 +21,34 @@ import {
   TextWrapper,
   Title
 } from "./styled";
-import { Header } from "common";
-import { Content } from "./Content";
-import placeholder from "./placeholder.svg";
 
-const ArticleList = () => {
-  const articles = useSelector(selectors.selectData);
+const ArticleList = ({ articlesCountOnPage = 12 }) => {
+  const allArticles = useSelector(selectors.selectData);
   const status = useSelector(selectors.selectStatus);
+  const searchQuery = useQueryParameter(searchQueryName);
 
-  const query = useQueryParameter(searchQueryName);
+  const articles = useList({
+    list: allArticles,
+    numberOfItems: articlesCountOnPage,
+  });
 
-  const articlesLength = articles?.length;
+  useGoToFirstPageWhenListEmpty(articles);
 
   useFetchOnPageLoad({
     fetchAction: actions.fetch,
-    value: query,
+    value: searchQuery,
   });
 
-  useEffect(() => {
-    console.log("articles:", articles, "status:", status);
-  }, [articles, status]);
+  const allArticlesLength = allArticles?.length;
 
   useClearDataOnLeave({ clearAction: actions.clear });
 
   const getTitleText = () => {
-    if (!!articlesLength) {
-      return `Search results for "${query}" (${articlesLength}):`;
+    if (!!allArticlesLength) {
+      return `Search results for "${searchQuery}" (${allArticlesLength}):`;
     }
 
-    return `Sorry, there are no results for "${query}"`;
+    return `Sorry, there are no results for "${searchQuery}"`;
   };
 
   return (
@@ -54,8 +58,7 @@ const ArticleList = () => {
         {getTitleText()}
       </Header>
 
-      {
-        !!articlesLength &&
+      {!!allArticlesLength &&
         <List>
           {articles.map(article =>
             <ListItem key={article.id}>
@@ -83,6 +86,13 @@ const ArticleList = () => {
             </ListItem>
           )}
         </List>
+      }
+
+      {allArticlesLength >= articlesCountOnPage &&
+        <Pagination
+          pageSize={articlesCountOnPage}
+          totalCount={allArticlesLength}
+        />
       }
 
     </Content>
