@@ -24,8 +24,10 @@ export const createListSlice = ({ name }) => {
     }
   });
 
-  const selectData = state => state[name][name];
-  const selectStatus = state => state[name].status;
+  const selectState = state => state[name];
+
+  const selectData = state => selectState(state)[name];
+  const selectStatus = state => selectState(state).status;
 
   return {
     actions: listSlice.actions,
