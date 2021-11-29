@@ -6,7 +6,7 @@ import { Pagination } from "./Pagination";
 import { selectors, actions } from "../articleListSlice";
 import { useClearDataOnLeave } from "common/useClearDataOnLeave";
 import { useQueryParameter } from "./useQueryParameter";
-import { useFetchOnPageLoad } from "./useFetchOnPageLoad";
+import { useFetchOnPageLoad } from "../../../common/useFetchOnPageLoad";
 import { useList } from "./useList";
 import { useGoToFirstPageWhenListEmpty } from "./useGoToFirstPageWhenListEmpty";
 import { searchQueryName } from "common/searchQueryName";
