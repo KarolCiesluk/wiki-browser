@@ -2,11 +2,9 @@ import { useField } from "formik";
 import { Autocomplete, TextField } from "@mui/material";
 import { useSelector } from "react-redux";
 
-import {
-  actions, selectors
-} from "../textInputSlice";
+import { actions, selectors } from "../textInputSlice";
 import { useHandleInputChange } from "./useHandleInputChange";
-import { useClearDataOnLeave } from "../../useClearDataOnLeave";
+import { useClearDataOnLeave } from "common/useClearDataOnLeave";
 
 const TextInput = (({ validate, ...props }) => {
   const suggestions = useSelector(selectors.selectData);
@@ -20,7 +18,7 @@ const TextInput = (({ validate, ...props }) => {
   const handleInputChange = useHandleInputChange(onChange);
 
   const handleAutocompleteChange = (_, values) => {
-    setValue(values);
+    setValue(values || "");
   };
 
   const getOptions = () => {
