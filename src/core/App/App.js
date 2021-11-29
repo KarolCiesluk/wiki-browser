@@ -15,7 +15,7 @@ function App() {
           />
 
           <Route
-            path="article/:id"
+            path="article/:articleID"
             element={<Article />}
           />
 
