@@ -26,10 +26,10 @@ const articleSlice = createSlice({
 });
 
 export const {
-  fetchArticle: fetch,
-  fetchArticleSuccess: fetchSuccess,
-  fetchArticleError: fetchError,
-  clearArticleData: clear,
+  fetchArticle,
+  fetchArticleSuccess,
+  fetchArticleError,
+  clearArticleData,
 } = articleSlice.actions;
 
 const selectArticleState = state => state.article;
