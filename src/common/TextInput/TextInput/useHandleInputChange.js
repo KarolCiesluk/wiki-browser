@@ -8,10 +8,10 @@ export const useHandleInputChange = onChange => {
   return (event) => {
     onChange(event);
 
-    const value = event.target.value;
+    const query = event.target.value;
 
-    if (value && value.trim()) {
-      dispatch(actions.fetch(value));
+    if (query && query.trim()) {
+      dispatch(actions.fetch(query));
     } else {
       dispatch(actions.clear());
     }
