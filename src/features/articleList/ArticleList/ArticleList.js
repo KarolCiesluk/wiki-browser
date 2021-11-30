@@ -1,15 +1,13 @@
 import { useSelector } from "react-redux";
+import { useParams } from "react-router";
 
 import { Content } from "./Content";
 import { Header } from "common";
 import { Pagination } from "./Pagination";
 import { selectors, actions } from "../articleListSlice";
 import { useClearDataOnLeave } from "common/useClearDataOnLeave";
-import { useQueryParameter } from "./useQueryParameter";
-import { useFetchOnPageLoad } from "../../../common/useFetchOnPageLoad";
 import { useList } from "./useList";
 import { useGoToFirstPageWhenListEmpty } from "./useGoToFirstPageWhenListEmpty";
-import { searchQueryName } from "common/searchQueryName";
 import placeholder from "./placeholder.svg";
 import {
   Description,
@@ -21,11 +19,12 @@ import {
   TextWrapper,
   Title
 } from "./styled";
+import { useFetchOnPageLoad } from "common/useFetchOnPageLoad";
 
 const ArticleList = ({ articlesCountOnPage = 12 }) => {
   const allArticles = useSelector(selectors.selectData);
   const status = useSelector(selectors.selectStatus);
-  const searchQuery = useQueryParameter(searchQueryName);
+  const { query } = useParams();
 
   const articles = useList({
     list: allArticles,
@@ -36,7 +35,7 @@ const ArticleList = ({ articlesCountOnPage = 12 }) => {
 
   useFetchOnPageLoad({
     fetchAction: actions.fetch,
-    value: searchQuery,
+    payload: query,
   });
 
   const allArticlesLength = allArticles?.length;
@@ -45,10 +44,10 @@ const ArticleList = ({ articlesCountOnPage = 12 }) => {
 
   const getTitleText = () => {
     if (!!allArticlesLength) {
-      return `Search results for "${searchQuery}" (${allArticlesLength}):`;
+      return `Search results for "${query}" (${allArticlesLength}):`;
     }
 
-    return `Sorry, there are no results for "${searchQuery}"`;
+    return `Sorry, there are no results for "${query}"`;
   };
 
   return (
@@ -63,7 +62,7 @@ const ArticleList = ({ articlesCountOnPage = 12 }) => {
           {articles.map(article =>
             <ListItem key={article.id}>
               <StyledLink
-                to={`/article/${article.id}`}
+                to={`/article/${article.key}`}
               >
                 <ImageWrapper url={article.thumbnail?.url}>
                   <Image
