@@ -15,12 +15,12 @@ function App() {
           />
 
           <Route
-            path="article/:articleID"
+            path="article/:title"
             element={<Article />}
           />
 
           <Route
-            path="articles"
+            path="articles/:query"
             element={<ArticleList />}
           />
 
