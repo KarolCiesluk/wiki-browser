@@ -1,19 +1,17 @@
 import { getArticleData } from "common/wikipediaAPI";
 
-export const getArticle = async (payload) => {
-  console.log("article:", payload);
+export const getArticle = async ({ title, language }) => {
   return await getArticleData({
-    title: payload.articleKey,
-    language: payload.language,
+    title,
+    language,
     endpoint: "/with_html",
   });
 };
 
-export const getArticleLanguages = async (payload) => {
-  console.log("languages:", payload);
+export const getArticleLanguages = async ({ title, language }) => {
   return await getArticleData({
-    title: payload.articleKey,
-    language: payload.language,
+    title,
+    language,
     endpoint: "/links/language",
   });
 };
