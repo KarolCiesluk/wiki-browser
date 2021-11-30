@@ -1,5 +1,5 @@
 import { listSaga } from "common/listSaga";
-import { getSuggestions } from "./getSuggestions";
+import { getSuggestions } from "./suggestionsAPI";
 import { actions } from "./textInputSlice";
 
 const SEARCH_DELAY = 500;
