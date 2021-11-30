@@ -14,7 +14,7 @@ const articleSlice = createSlice({
       state.status = "loading";
     },
     fetchArticleSuccess: (state, { payload: data }) => {
-      state.article = data.articles;
+      state.article = data.article;
       state.languages = data.languages;
       state.status = "success";
     },
