@@ -6,13 +6,15 @@ import { Navigation } from "./Navigation";
 import {
   FormWrapper,
   Header,
+  LogoImage,
   LogoLink,
+  LogoText,
   SearchButton,
   SearchGrid,
   StyledSearchIcon,
-  StyledWikiIcon,
   TopBarGrid
 } from "./styled";
+import wikipediaIcon from "./wikipediaIcon.png";
 
 const TopBar = () => {
   const { pathname } = useLocation();
@@ -23,7 +25,16 @@ const TopBar = () => {
         <TopBarGrid>
 
           <LogoLink to="/">
-            <StyledWikiIcon />
+
+            <LogoImage
+              src={wikipediaIcon}
+              alt="logo"
+            />
+
+            <LogoText>
+              Wiki browser
+            </LogoText>
+
           </LogoLink>
 
           {
