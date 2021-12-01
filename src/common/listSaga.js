@@ -5,11 +5,11 @@ export function* listSaga({
   getListData,
   searchDelay,
 }) {
-  function* fetchListHandler({ payload: query }) {
+  function* fetchListHandler({ payload }) {
     yield !!searchDelay && delay(searchDelay);
 
     try {
-      const list = yield call(getListData, query);
+      const list = yield call(getListData, payload);
       yield put(actions.fetchSuccess(list));
     } catch (error) {
       yield put(actions.fetchError());
