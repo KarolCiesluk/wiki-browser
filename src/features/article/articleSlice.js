@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   status: "initial",
   article: null,
-  languages: null
+  languages: null,
+  showLanguages: false,
 };
 
 const articleSlice = createSlice({
@@ -12,6 +13,7 @@ const articleSlice = createSlice({
   reducers: {
     fetchArticle: state => {
       state.status = "loading";
+      state.showLanguages = false;
     },
     fetchArticleSuccess: (state, { payload: data }) => {
       state.article = data.article;
@@ -21,6 +23,9 @@ const articleSlice = createSlice({
     fetchArticleError: state => {
       state.status = "error";
     },
+    toggleShowLanguages: state => {
+      state.showLanguages = !state.showLanguages;
+    },
     clearArticleData: () => initialState,
   },
 });
@@ -29,6 +34,7 @@ export const {
   fetchArticle,
   fetchArticleSuccess,
   fetchArticleError,
+  toggleShowLanguages,
   clearArticleData,
 } = articleSlice.actions;
 
@@ -42,5 +48,8 @@ export const selectArticle = state =>
 
 export const selectArticleLanguages = state =>
   selectArticleState(state).languages;
+
+export const selectShowLanguages = state =>
+  selectArticleState(state).showLanguages;
 
 export default articleSlice.reducer;
