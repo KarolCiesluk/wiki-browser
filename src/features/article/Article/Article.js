@@ -1,33 +1,27 @@
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
-import { nanoid } from "nanoid";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { IoLanguageSharp } from 'react-icons/io5';
 
 import { useClearDataOnLeave } from "common/useClearDataOnLeave";
 import { useFetchOnPageLoad } from "common/useFetchOnPageLoad";
 import { Content } from "features/articleList/ArticleList/Content";
-import { useQueryParameter } from "features/articleList/ArticleList/useQueryParameter";
+import { useQueryParameter } from "common/useQueryParameter";
 import {
   clearArticleData,
   fetchArticle,
   selectArticle,
-  selectArticleLanguages,
   selectArticleStatus,
-  selectShowLanguages,
-  toggleShowLanguages
 } from "../articleSlice";
-import { goToOtherLanguage } from "./goToOtherLanguage";
 import { ArticleHeader, LanguageButton } from "./styled";
+import LanguagesDrawer from "./LanguagesDrawer";
+import { useToggleShowLanguages } from "./useToggleShowLanguages";
 
 const Article = () => {
   const { title } = useParams();
   const language = useQueryParameter("language") || undefined;
-  const dispatch = useDispatch();
 
   const status = useSelector(selectArticleStatus);
   const article = useSelector(selectArticle);
-  const availableLanguages = useSelector(selectArticleLanguages);
-  const showLanguages = useSelector(selectShowLanguages);
 
   useFetchOnPageLoad({
     fetchAction: fetchArticle,
@@ -35,9 +29,7 @@ const Article = () => {
     language,
   });
 
-  const handleButtonClick = () => {
-    dispatch(toggleShowLanguages());
-  };
+  const toggleShowLanguages = useToggleShowLanguages();
 
   useClearDataOnLeave({
     clearAction: clearArticleData,
@@ -46,32 +38,11 @@ const Article = () => {
   return (
     <Content status={status}>
 
-      {showLanguages &&
-        <aside>
-          <h2>Languages</h2>
-
-          <ul >
-            {availableLanguages?.map(language => (
-              <li key={nanoid()}>
-                <Link
-                  to={goToOtherLanguage({
-                    key: language.key,
-                    languageCode: language.code,
-                  })}
-                >
-                  {language.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-        </aside>
-      }
-
+      <LanguagesDrawer />
       <ArticleHeader>
 
         <LanguageButton
-          onClick={handleButtonClick}
+          onClick={toggleShowLanguages}
           title="Read article in other language"
         >
           <IoLanguageSharp />
