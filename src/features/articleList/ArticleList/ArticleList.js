@@ -35,7 +35,7 @@ const ArticleList = ({ articlesCountOnPage = 12 }) => {
 
   useFetchOnPageLoad({
     fetchAction: actions.fetch,
-    payload: query,
+    value: query,
   });
 
   const allArticlesLength = allArticles?.length;
