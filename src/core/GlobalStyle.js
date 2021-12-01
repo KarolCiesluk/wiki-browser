@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
     color: #0e1111;
+    word-break: break-word;
 
     @media (max-width: 400px) {
       font-size: 14px;
