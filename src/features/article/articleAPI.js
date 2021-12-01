@@ -1,6 +1,6 @@
 import { getArticleData } from "common/wikipediaAPI";
 
-export const getArticle = async ({ title, language }) => {
+export const getArticle = async ({ value: title, language }) => {
   return await getArticleData({
     title,
     language,
@@ -8,7 +8,7 @@ export const getArticle = async ({ title, language }) => {
   });
 };
 
-export const getArticleLanguages = async ({ title, language }) => {
+export const getArticleLanguages = async ({ value: title, language }) => {
   return await getArticleData({
     title,
     language,
