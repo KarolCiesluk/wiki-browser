@@ -37,7 +37,7 @@ const selectArticleState = state => state.article;
 export const selectArticleStatus = state =>
   selectArticleState(state).status;
 
-export const selectArticleData = state =>
+export const selectArticle = state =>
   selectArticleState(state).article;
 
 export const selectArticleLanguages = state =>
