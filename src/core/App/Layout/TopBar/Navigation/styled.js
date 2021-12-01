@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const StyledNavigation = styled.nav`
   grid-column: 3;
@@ -17,7 +17,7 @@ export const NavigationList = styled.ul`
   padding: 0;
 `;
 
-export const NavigationLink = styled(Link)`
+export const NavigationLink = styled(NavLink)`
   border: 1px solid #E5E8EC;
   padding: 8px 10px;
   margin: 4px;
@@ -26,6 +26,14 @@ export const NavigationLink = styled(Link)`
   text-decoration: none;
 
   &:hover {
+    background-color: #e5e8ec2e;
+  }
+
+  &:visited {
+    color: #007FFF;
+  }
+
+  &.active {
     background-color: #e5e8ec2e;
   }
 `;
