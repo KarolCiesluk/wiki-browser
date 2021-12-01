@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/wiki-browser/static/js/main.6373f09d.chunk.js",
-    "main.js.map": "/wiki-browser/static/js/main.6373f09d.chunk.js.map",
+    "main.js": "/wiki-browser/static/js/main.01eee280.chunk.js",
+    "main.js.map": "/wiki-browser/static/js/main.01eee280.chunk.js.map",
     "runtime-main.js": "/wiki-browser/static/js/runtime-main.ab6d2687.js",
     "runtime-main.js.map": "/wiki-browser/static/js/runtime-main.ab6d2687.js.map",
-    "static/js/2.e536b4d9.chunk.js": "/wiki-browser/static/js/2.e536b4d9.chunk.js",
-    "static/js/2.e536b4d9.chunk.js.map": "/wiki-browser/static/js/2.e536b4d9.chunk.js.map",
+    "static/js/2.c72d1608.chunk.js": "/wiki-browser/static/js/2.c72d1608.chunk.js",
+    "static/js/2.c72d1608.chunk.js.map": "/wiki-browser/static/js/2.c72d1608.chunk.js.map",
     "index.html": "/wiki-browser/index.html",
-    "static/js/2.e536b4d9.chunk.js.LICENSE.txt": "/wiki-browser/static/js/2.e536b4d9.chunk.js.LICENSE.txt",
+    "static/js/2.c72d1608.chunk.js.LICENSE.txt": "/wiki-browser/static/js/2.c72d1608.chunk.js.LICENSE.txt",
     "static/media/arrow.491abd2b.svg": "/wiki-browser/static/media/arrow.491abd2b.svg",
     "static/media/placeholder.dcc15973.svg": "/wiki-browser/static/media/placeholder.dcc15973.svg",
     "static/media/wikipediaIcon.ceae221c.png": "/wiki-browser/static/media/wikipediaIcon.ceae221c.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ab6d2687.js",
-    "static/js/2.e536b4d9.chunk.js",
-    "static/js/main.6373f09d.chunk.js"
+    "static/js/2.c72d1608.chunk.js",
+    "static/js/main.01eee280.chunk.js"
   ]
 }
