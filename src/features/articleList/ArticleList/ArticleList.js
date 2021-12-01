@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
+import { nanoid } from "@reduxjs/toolkit";
 
 import { Content } from "./Content";
 import { Header } from "common";
@@ -20,47 +21,43 @@ import {
   Title
 } from "./styled";
 import { useFetchOnPageLoad } from "common/useFetchOnPageLoad";
+import { getTitleText } from "./getTitleText";
 
 const ArticleList = ({ articlesCountOnPage = 12 }) => {
   const allArticles = useSelector(selectors.selectData);
   const status = useSelector(selectors.selectStatus);
   const { query } = useParams();
 
+  const allArticlesLength = allArticles?.length;
+
   const articles = useList({
     list: allArticles,
     numberOfItems: articlesCountOnPage,
   });
-
-  useGoToFirstPageWhenListEmpty(articles);
 
   useFetchOnPageLoad({
     fetchAction: actions.fetch,
     value: query,
   });
 
-  const allArticlesLength = allArticles?.length;
+  useGoToFirstPageWhenListEmpty(articles);
 
   useClearDataOnLeave({ clearAction: actions.clear });
-
-  const getTitleText = () => {
-    if (!!allArticlesLength) {
-      return `Search results for "${query}" (${allArticlesLength}):`;
-    }
-
-    return `Sorry, there are no results for "${query}"`;
-  };
 
   return (
     <Content status={status}>
 
       <Header>
-        {getTitleText()}
+        {getTitleText({
+          listLength: allArticlesLength,
+          query,
+        })}
       </Header>
 
       {!!allArticlesLength &&
         <List>
           {articles.map(article =>
-            <ListItem key={article.id}>
+            <ListItem key={nanoid()}>
               <StyledLink
                 to={`/article/${article.key}`}
               >
