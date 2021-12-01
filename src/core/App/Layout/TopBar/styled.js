@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FaWikipediaW } from 'react-icons/fa';
 import { AiOutlineSearch } from 'react-icons/ai';
 
 export const Header = styled.header`
@@ -21,15 +20,26 @@ export const LogoLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-content: center;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 `;
 
-export const StyledWikiIcon = styled(FaWikipediaW)`
-  width: 50px;
+export const LogoImage = styled.img`
+  width: 54px;
   height: auto;
-  color: #1483fb;
+`;
 
-  @media(max-width: 700px) {
-    width: 40px;
+export const LogoText = styled.span`
+  font-size: 20px;
+  color: black;
+  align-self: center;
+  margin-left: 8px;
+
+  @media (max-width: 750px) {
+    display: none;
   }
 `;
 
@@ -72,4 +82,3 @@ export const StyledSearchIcon = styled(AiOutlineSearch)`
   height: auto;
   color: #666666;
 `;
-
