@@ -1,6 +1,6 @@
 import { getListData } from "common/wikipediaAPI";
 
-export const getSuggestions = async (query) => {
+export const getSuggestions = async ({ value: query }) => {
   return await getListData({
     query,
     endpoint: "search/title",
