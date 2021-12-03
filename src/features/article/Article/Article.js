@@ -18,7 +18,7 @@ import { useToggleShowLanguages } from "./useToggleShowLanguages";
 
 const Article = () => {
   const { title } = useParams();
-  const language = useQueryParameter("language") || undefined;
+  const language = useQueryParameter("language") || "en";
 
   const status = useSelector(selectArticleStatus);
   const article = useSelector(selectArticle);
