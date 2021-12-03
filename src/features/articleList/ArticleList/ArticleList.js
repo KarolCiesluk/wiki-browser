@@ -10,6 +10,8 @@ import { useClearDataOnLeave } from "common/useClearDataOnLeave";
 import { useList } from "./useList";
 import { useGoToFirstPageWhenListEmpty } from "./useGoToFirstPageWhenListEmpty";
 import placeholder from "./placeholder.svg";
+import { useFetchOnPageLoad } from "common/useFetchOnPageLoad";
+import { getTitleText } from "./getTitleText";
 import {
   Description,
   Image,
@@ -20,8 +22,7 @@ import {
   TextWrapper,
   Title
 } from "./styled";
-import { useFetchOnPageLoad } from "common/useFetchOnPageLoad";
-import { getTitleText } from "./getTitleText";
+import { useAddHistoryItemOnPageLoad } from "./useAddHistoryItemOnPageLoad";
 
 const ArticleList = ({ articlesCountOnPage = 12 }) => {
   const allArticles = useSelector(selectors.selectData);
@@ -39,6 +40,8 @@ const ArticleList = ({ articlesCountOnPage = 12 }) => {
     fetchAction: actions.fetch,
     value: query,
   });
+
+  useAddHistoryItemOnPageLoad({ query });
 
   useGoToFirstPageWhenListEmpty(articles);
 
