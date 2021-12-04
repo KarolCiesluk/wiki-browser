@@ -49,6 +49,9 @@ export const selectArticle = state =>
 export const selectArticleLanguages = state =>
   selectArticleState(state).languages;
 
+export const selectAreLanguagesAvailable = state =>
+  !!selectArticleLanguages(state)?.length;
+
 export const selectShowLanguages = state =>
   selectArticleState(state).showLanguages;
 
