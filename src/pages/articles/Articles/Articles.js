@@ -5,7 +5,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import { Content } from "../../../common/Content";
 import { Header } from "common";
 import { Pagination } from "./Pagination";
-import { selectors, actions } from "../articleListSlice";
+import { selectors, actions } from "../articlesSlice";
 import { useClearDataOnLeave } from "common/useClearDataOnLeave";
 import { useList } from "./useList";
 import { useGoToFirstPageWhenListEmpty } from "./useGoToFirstPageWhenListEmpty";
@@ -24,7 +24,7 @@ import {
 } from "./styled";
 import { useAddHistoryItemOnPageLoad } from "./useAddHistoryItemOnPageLoad";
 
-const ArticleList = ({ articlesCountOnPage = 12 }) => {
+const Articles = ({ articlesCountOnPage = 12 }) => {
   const allArticles = useSelector(selectors.selectData);
   const status = useSelector(selectors.selectStatus);
   const { query } = useParams();
@@ -98,4 +98,4 @@ const ArticleList = ({ articlesCountOnPage = 12 }) => {
   );
 };
 
-export default ArticleList;
+export default Articles;

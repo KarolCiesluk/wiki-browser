@@ -1,4 +1,4 @@
-import { actions } from "./articleListSlice";
+import { actions } from "./articlesSlice";
 import { listSaga } from "common/listSaga";
 import { getArticles } from "./articlesAPI";
 

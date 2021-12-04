@@ -1,7 +1,7 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Layout } from "./Layout";
-import { Article, ArticleList, Home, SearchHistory } from "pages";
+import { Article, Articles, Home, SearchHistory } from "pages";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
 
           <Route
             path="articles/:query"
-            element={<ArticleList />}
+            element={<Articles />}
           />
 
           <Route
