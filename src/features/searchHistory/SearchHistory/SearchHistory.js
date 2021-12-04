@@ -31,7 +31,7 @@ const SearchHistory = () => {
   }
 
   return (
-    <section>
+    <>
       {isHistoryEmpty ?
         <h1>History is empty</h1> :
         <>
@@ -48,10 +48,10 @@ const SearchHistory = () => {
                   X
                 </button>
 
-                <span>Selected items: {selectedItemsCount}</span>
+                <span>Selected: {selectedItemsCount}</span>
 
                 <button onClick={handleRemoveSelected}>
-                  Remove Selected
+                  Delete Selected
                 </button>
               </>
             }
@@ -66,7 +66,7 @@ const SearchHistory = () => {
           </ul>
         </>
       }
-    </section>
+    </>
   );
 };
 
