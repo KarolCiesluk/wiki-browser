@@ -4,7 +4,7 @@ import { IoLanguageSharp } from 'react-icons/io5';
 
 import { useClearDataOnLeave } from "common/useClearDataOnLeave";
 import { useFetchOnPageLoad } from "common/useFetchOnPageLoad";
-import { Content } from "features/articleList/ArticleList/Content";
+import { Content } from "common/Content";
 import { useQueryParameter } from "common/useQueryParameter";
 import {
   clearArticleData,

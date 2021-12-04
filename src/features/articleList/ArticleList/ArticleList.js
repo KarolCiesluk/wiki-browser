@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { nanoid } from "@reduxjs/toolkit";
 
-import { Content } from "./Content";
+import { Content } from "../../../common/Content";
 import { Header } from "common";
 import { Pagination } from "./Pagination";
 import { selectors, actions } from "../articleListSlice";
