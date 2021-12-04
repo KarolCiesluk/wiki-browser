@@ -4,6 +4,7 @@ import {
   addHistoryItem,
   clearHistory,
   removeHistoryItem,
+  removeSelectedHistoryItems,
   selectHistory
 } from "./searchHistorySlice";
 import { saveHistoryInLocalStorage } from "./searchHistoryLocalStorage";
@@ -20,6 +21,7 @@ export function* watchSearchHistoryChange() {
       addHistoryItem.type,
       removeHistoryItem.type,
       clearHistory.type,
+      removeSelectedHistoryItems.type,
     ],
     searchHistoryChangeHandler
   );
