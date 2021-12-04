@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { nanoid } from "@reduxjs/toolkit";
 
 import { Content } from "../../../common/Content";
-import { Header } from "common";
+import { PageTitle } from "common";
 import { Pagination } from "./Pagination";
 import { selectors, actions } from "../articlesSlice";
 import { useClearDataOnLeave } from "common/useClearDataOnLeave";
@@ -50,12 +50,12 @@ const Articles = ({ articlesCountOnPage = 12 }) => {
   return (
     <Content status={status}>
 
-      <Header>
+      <PageTitle>
         {getTitleText({
           listLength: allArticlesLength,
           query,
         })}
-      </Header>
+      </PageTitle>
 
       {!!allArticlesLength &&
         <List>

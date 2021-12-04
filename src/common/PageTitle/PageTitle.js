@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Header = styled.h1`
+const PageTitle = styled.h1`
   font-weight: normal;
 
   @media(max-width: 700px) {
@@ -8,4 +8,4 @@ const Header = styled.h1`
   }
 `;
 
-export default Header;
+export default PageTitle;

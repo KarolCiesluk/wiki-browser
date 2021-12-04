@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import { Header } from "common";
+import { PageTitle } from "common";
 
-export const ArticleHeader = styled(Header)`
+export const ArticleTitle = styled(PageTitle)`
     border: none;
     display: flex;
     align-items: center;

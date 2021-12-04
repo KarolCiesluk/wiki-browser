@@ -10,6 +10,7 @@ import {
   unselectAllHistoryItems,
 } from "../searchHistorySlice";
 import { SearchListOfGivenDay } from "./SearchListOfGivenDay";
+import { PageTitle } from "common";
 
 const SearchHistory = () => {
   const isHistoryEmpty = useSelector(selectIsHistoryEmpty);
@@ -33,10 +34,10 @@ const SearchHistory = () => {
   return (
     <>
       {isHistoryEmpty ?
-        <h1>History is empty</h1> :
+        <PageTitle>History is empty</PageTitle> :
         <>
           <header>
-            <h1>Search history</h1>
+            <PageTitle>Search history</PageTitle>
 
             <button onClick={handleClearHistory}>
               Clear History

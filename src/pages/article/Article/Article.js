@@ -13,7 +13,7 @@ import {
   selectArticle,
   selectArticleStatus,
 } from "../articleSlice";
-import { ArticleHeader, LanguageButton } from "./styled";
+import { ArticleTitle, LanguageButton } from "./styled";
 import LanguagesDrawer from "./LanguagesDrawer";
 import { useToggleShowLanguages } from "./useToggleShowLanguages";
 
@@ -40,7 +40,7 @@ const Article = () => {
   return (
     <Content status={status}>
 
-      <ArticleHeader>
+      <ArticleTitle>
 
         {areLanguagesAvailable &&
           <>
@@ -56,7 +56,7 @@ const Article = () => {
         }
 
         {article?.title}
-      </ArticleHeader>
+      </ArticleTitle>
 
       {!!article?.html &&
         <div

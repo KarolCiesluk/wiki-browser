@@ -1,10 +1,10 @@
-import { Header, inputValueName, SearchForm, TextInput } from "common";
+import { PageTitle, inputValueName, SearchForm, TextInput } from "common";
 import { Button, Wrapper } from "./styled";
 
 const Home = () => {
   return (
     <>
-      <Header>Wiki browser</Header>
+      <PageTitle>Wiki browser</PageTitle>
 
       <SearchForm>
         <Wrapper>
