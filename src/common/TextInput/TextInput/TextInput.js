@@ -34,6 +34,7 @@ const TextInput = (({ validate, ...props }) => {
       inputValue={value}
       onChange={handleAutocompleteChange}
       options={getOptions()}
+      isOptionEqualToValue={(option, value) => option.id === value.id}
       renderInput={params => (
         <TextField
           onChange={handleInputChange}
