@@ -5,6 +5,5 @@ export const saveHistoryInLocalStorage = (history) => {
 };
 
 export const getHistoryFromLocalStorage = () => {
-  // console.log(JSON.parse(localStorage.getItem(localStorageKey)));
   return JSON.parse(localStorage.getItem(localStorageKey)) || [];
 };
