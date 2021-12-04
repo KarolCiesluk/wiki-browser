@@ -15,7 +15,7 @@ const TextInput = (({ validate, ...props }) => {
     { setValue }
   ] = useField(props);
 
-  const handleInputChange = useHandleInputChange(onChange);
+  useHandleInputChange(value);
 
   const handleAutocompleteChange = (_, values) => {
     setValue(values || "");
@@ -37,7 +37,7 @@ const TextInput = (({ validate, ...props }) => {
       isOptionEqualToValue={(option, value) => option.id === value.id}
       renderInput={params => (
         <TextField
-          onChange={handleInputChange}
+          onChange={onChange}
           error={validate && touched && !!error}
           helperText={validate && touched && error}
           {...params}
