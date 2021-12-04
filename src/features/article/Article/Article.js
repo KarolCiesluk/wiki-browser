@@ -9,6 +9,7 @@ import { useQueryParameter } from "common/useQueryParameter";
 import {
   clearArticleData,
   fetchArticle,
+  selectAreLanguagesAvailable,
   selectArticle,
   selectArticleStatus,
 } from "../articleSlice";
@@ -22,6 +23,7 @@ const Article = () => {
 
   const status = useSelector(selectArticleStatus);
   const article = useSelector(selectArticle);
+  const areLanguagesAvailable = useSelector(selectAreLanguagesAvailable);
 
   useFetchOnPageLoad({
     fetchAction: fetchArticle,
@@ -38,18 +40,22 @@ const Article = () => {
   return (
     <Content status={status}>
 
-      <LanguagesDrawer />
       <ArticleHeader>
 
-        <LanguageButton
-          onClick={toggleShowLanguages}
-          title="Read article in other language"
-        >
-          <IoLanguageSharp />
-        </LanguageButton>
+        {areLanguagesAvailable &&
+          <>
+            <LanguagesDrawer />
+
+            <LanguageButton
+              onClick={toggleShowLanguages}
+              title="Read article in other language"
+            >
+              <IoLanguageSharp />
+            </LanguageButton>
+          </>
+        }
 
         {article?.title}
-
       </ArticleHeader>
 
       {!!article?.html &&
