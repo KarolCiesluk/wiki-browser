@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { formatJsonDate } from "./formatJsonDate";
+import { formatDate } from "./formatDate";
 import { getHistoryFromLocalStorage } from "./searchHistoryLocalStorage";
 
 const initialState = {
@@ -52,7 +52,7 @@ const selectHistoryState = state => state.history;
 export const selectHistory = state => selectHistoryState(state).history;
 export const selectIsHistoryEmpty = state => !selectHistory(state).length;
 export const selectFormattedDates = state => {
-  const dates = selectHistory(state).map(({ date }) => formatJsonDate(date));
+  const dates = selectHistory(state).map(({ date }) => formatDate(date));
   const formattedDates = dates.filter((date, index, dates) => (
     dates.indexOf(date) === index
   ));

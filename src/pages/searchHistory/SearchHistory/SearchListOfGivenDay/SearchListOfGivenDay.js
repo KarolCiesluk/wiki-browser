@@ -6,7 +6,8 @@ import {
   removeHistoryItem,
   selectHistory, toggleHistoryItemSelected
 } from "pages/searchHistory/searchHistorySlice";
-import { formatJsonDate } from "pages/searchHistory/formatJsonDate";
+import { formatDate } from "pages/searchHistory/formatDate";
+import { formatTime } from "./formatTime";
 
 const SearchListOfGivenDay = ({ day }) => {
   const searchHistory = useSelector(selectHistory);
@@ -18,7 +19,7 @@ const SearchListOfGivenDay = ({ day }) => {
 
       <ul>
         {searchHistory.filter(item =>
-          formatJsonDate(item.date) === day).map(item => (
+          formatDate(item.date) === day).map(item => (
             <li key={nanoid()}>
 
               <button
@@ -28,10 +29,7 @@ const SearchListOfGivenDay = ({ day }) => {
               </button>
 
               <time dateTime={item.date}>
-                {new Date(item.date).toLocaleTimeString(
-                  undefined,
-                  { hour: '2-digit', minute: '2-digit' }
-                )}
+                {formatTime(item.date)}
               </time>
 
               <Link to={`../articles/${item.query}`}>
