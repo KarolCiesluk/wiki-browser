@@ -11,7 +11,7 @@ export const useAddHistoryItemOnPageLoad = ({ query }) => {
     const historyItem = {
       id: nanoid(),
       query,
-      time: new Date(),
+      date: new Date().toJSON(),
     };
 
     dispatch(addHistoryItem(historyItem));
