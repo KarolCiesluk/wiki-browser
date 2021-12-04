@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import {
   removeHistoryItem,
   selectHistory, toggleHistoryItemSelected
-} from "features/searchHistory/searchHistorySlice";
-import { formatJsonDate } from "features/searchHistory/formatJsonDate";
+} from "pages/searchHistory/searchHistorySlice";
+import { formatJsonDate } from "pages/searchHistory/formatJsonDate";
 
 const SearchListOfGivenDay = ({ day }) => {
   const searchHistory = useSelector(selectHistory);

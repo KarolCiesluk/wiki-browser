@@ -5,7 +5,7 @@ import { GrClose } from "react-icons/gr";
 import {
   selectArticleLanguages,
   selectShowLanguages
-} from "features/article/articleSlice";
+} from "pages/article/articleSlice";
 import { goToOtherLanguage } from "./goToOtherLanguage";
 import { useToggleShowLanguages } from "../useToggleShowLanguages";
 import {

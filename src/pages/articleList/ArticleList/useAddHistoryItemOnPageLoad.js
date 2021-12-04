@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 
-import { addHistoryItem } from "features/searchHistory/searchHistorySlice";
+import { addHistoryItem } from "pages/searchHistory/searchHistorySlice";
 
 export const useAddHistoryItemOnPageLoad = ({ query }) => {
   const dispatch = useDispatch();
