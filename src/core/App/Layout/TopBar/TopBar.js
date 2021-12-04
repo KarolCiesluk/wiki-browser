@@ -63,7 +63,7 @@ const TopBar = () => {
 
         </TopBarGrid>
       </Container>
-    </Header >
+    </Header>
   );
 };
 
