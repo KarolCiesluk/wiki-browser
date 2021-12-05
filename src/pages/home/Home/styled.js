@@ -1,18 +1,11 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+import { Wrapper } from "common";
+
+export const FormWrapper = styled(Wrapper)`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 14px;
-  padding: 40px;
-  border-radius: 4px;
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
-  @media(max-width: 700px) {
-    padding: 22px;
-  }
 `;
 
 export const Button = styled.button`
