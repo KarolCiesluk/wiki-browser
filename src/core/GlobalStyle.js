@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Roboto', sans-serif;
-    color: #0e1111;
     overflow-wrap: break-word;
 
     @media (max-width: 400px) {
