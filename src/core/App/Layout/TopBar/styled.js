@@ -71,6 +71,7 @@ export const SearchButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   &:hover {
     background-color: #eaeef3;
