@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const List = styled.ul`
-  list-style: none;
-  padding: 0;
+import { List } from "common";
+
+export const ArticleList = styled(List)`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
   grid-gap: 16px;
@@ -62,8 +62,8 @@ export const TextWrapper = styled.div`
 `;
 
 export const Title = styled.h2`
-  word-break: break-word;
   line-height: 1;
+  font-weight: normal;
 
   @media(max-width: 700px) {
     font-size: 20px;
