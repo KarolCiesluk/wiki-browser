@@ -4,7 +4,6 @@ import { IoLanguageSharp } from 'react-icons/io5';
 
 import { useClearDataOnLeave } from "common/useClearDataOnLeave";
 import { useFetchOnPageLoad } from "common/useFetchOnPageLoad";
-import { Content } from "common/Content";
 import { useQueryParameter } from "common/useQueryParameter";
 import {
   clearArticleData,
@@ -16,6 +15,7 @@ import {
 import { ArticleTitle, LanguageButton } from "./styled";
 import LanguagesDrawer from "./LanguagesDrawer";
 import { useToggleShowLanguages } from "./useToggleShowLanguages";
+import { Content } from "common";
 
 const Article = () => {
   const { title } = useParams();

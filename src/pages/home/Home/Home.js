@@ -1,5 +1,5 @@
 import { PageTitle, inputValueName, SearchForm, TextInput } from "common";
-import { Button, Wrapper } from "./styled";
+import { Button, FormWrapper } from "./styled";
 
 const Home = () => {
   return (
@@ -7,7 +7,7 @@ const Home = () => {
       <PageTitle>Wiki browser</PageTitle>
 
       <SearchForm>
-        <Wrapper>
+        <FormWrapper>
           <TextInput
             autoFocus
             name={inputValueName}
@@ -15,8 +15,9 @@ const Home = () => {
             label="Search Wikipedia*"
             validate
           />
+
           <Button type="submit">Search</Button>
-        </Wrapper>
+        </FormWrapper>
       </SearchForm>
     </>
   );

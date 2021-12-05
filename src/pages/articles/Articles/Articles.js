@@ -2,8 +2,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { nanoid } from "@reduxjs/toolkit";
 
-import { Content } from "../../../common/Content";
-import { PageTitle } from "common";
+import { Content, PageTitle } from "common";
 import { Pagination } from "./Pagination";
 import { selectors, actions } from "../articlesSlice";
 import { useClearDataOnLeave } from "common/useClearDataOnLeave";
@@ -16,7 +15,7 @@ import {
   Description,
   Image,
   ImageWrapper,
-  List,
+  ArticleList,
   ListItem,
   StyledLink,
   TextWrapper,
@@ -58,7 +57,7 @@ const Articles = ({ articlesCountOnPage = 12 }) => {
       </PageTitle>
 
       {!!allArticlesLength &&
-        <List>
+        <ArticleList>
           {articles.map(article =>
             <ListItem key={nanoid()}>
               <StyledLink
@@ -84,7 +83,7 @@ const Articles = ({ articlesCountOnPage = 12 }) => {
               </StyledLink>
             </ListItem>
           )}
-        </List>
+        </ArticleList>
       }
 
       {allArticlesLength >= articlesCountOnPage &&
