@@ -1,6 +1,6 @@
 export const formatDate = jsonDate => {
   return new Date(jsonDate).toLocaleDateString(
-    undefined,
+    "en",
     { month: "long", weekday: "long", day: "numeric", year: "numeric" }
   );
 };
