@@ -1,6 +1,6 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
-import { GrClose } from "react-icons/gr";
+import { IoClose } from "react-icons/io5";
 
 import {
   selectArticleLanguages,
@@ -9,15 +9,15 @@ import {
 import { goToOtherLanguage } from "./goToOtherLanguage";
 import { useToggleShowLanguages } from "../useToggleShowLanguages";
 import {
-  List,
-  LinkItem,
-  StyledMenu,
+  LanguagesList,
+  ListItem,
+  StyledDrawer,
   StyledLink,
   Background,
   DrawerHeader,
-  ExitButton,
   DrawerTitle
 } from "./styled";
+import { CancelButton } from "common";
 
 const LanguagesDrawer = () => {
   const availableLanguages = useSelector(selectArticleLanguages);
@@ -28,20 +28,20 @@ const LanguagesDrawer = () => {
     <>
       <Background open={showLanguages} onClick={toggleShowLanguages} />
 
-      <StyledMenu active={showLanguages}>
+      <StyledDrawer active={showLanguages}>
 
         <DrawerHeader>
           <DrawerTitle>Read article in other language</DrawerTitle>
 
-          <ExitButton onClick={toggleShowLanguages}>
-            <GrClose />
-          </ExitButton>
+          <CancelButton onClick={toggleShowLanguages}>
+            <IoClose />
+          </CancelButton>
 
         </DrawerHeader>
 
-        <List>
+        <LanguagesList>
           {availableLanguages?.map(language => (
-            <LinkItem key={nanoid()}>
+            <ListItem key={nanoid()}>
               <StyledLink
                 to={goToOtherLanguage({
                   key: language.key,
@@ -50,11 +50,11 @@ const LanguagesDrawer = () => {
               >
                 {language.name}
               </StyledLink>
-            </LinkItem>
+            </ListItem>
           ))}
-        </List>
+        </LanguagesList>
 
-      </StyledMenu>
+      </StyledDrawer>
     </>
   );
 };
