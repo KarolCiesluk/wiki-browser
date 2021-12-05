@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
+import { useMediaWatcher } from "common/useMediaWatcher";
 import { getRangeNumbers } from "./getRangeNumbers";
-import { useSiblingCount } from "./useSiblingCount";
 
 export const DOTS = "…";
 
@@ -10,7 +10,8 @@ export const usePagination = ({
   currentPage,
   initialSiblingCount = 1,
 }) => {
-  const siblingCount = useSiblingCount(initialSiblingCount);
+  const isSmallScreen = useMediaWatcher({ maxWidth: 500 });
+  const siblingCount = isSmallScreen ? initialSiblingCount - 1 : initialSiblingCount;
 
   const paginationRange = useMemo(() => {
     const firstPageIndex = 1;
