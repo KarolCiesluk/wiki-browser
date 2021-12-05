@@ -28,8 +28,10 @@ export const LogoLink = styled(Link)`
 `;
 
 export const LogoImage = styled.img`
-  width: 54px;
-  height: auto;
+  @media (max-width: 500px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 export const LogoText = styled.span`
