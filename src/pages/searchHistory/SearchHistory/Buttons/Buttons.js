@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { IoClose } from "react-icons/io5";
 
+import { CancelButton } from "common";
 import {
   clearHistory,
   removeSelectedHistoryItems,
   selectSelectedItemsCount,
   unselectAllHistoryItems
 } from "pages/searchHistory/searchHistorySlice";
-import { CancelButton } from "common";
 import { DeleteButton, StyledButtons, Wrapper } from "./styled";
 
 const Buttons = () => {

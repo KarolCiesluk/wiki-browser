@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 
-import { validationSchema } from "./validationSchema";
 import { inputValueName } from "common";
+import { validationSchema } from "./validationSchema";
 import { useHandleSubmit } from "./useHandleSubmit";
 
 const SearchForm = ({ children }) => {

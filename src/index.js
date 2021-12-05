@@ -1,10 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Normalize } from 'styled-normalize';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Normalize } from "styled-normalize";
 import { Provider } from "react-redux";
 
-import { App, GlobalStyle } from 'core';
-import store from 'core/store';
+import { App, GlobalStyle, store } from "core";
 
 ReactDOM.render(
   <React.StrictMode>

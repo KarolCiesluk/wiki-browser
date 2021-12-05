@@ -2,14 +2,19 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { nanoid } from "@reduxjs/toolkit";
 
-import { Content, PageTitle } from "common";
+import {
+  Content,
+  PageTitle,
+  Title,
+  useClearDataOnLeave,
+  useFetchOnPageLoad
+} from "common";
 import { Pagination } from "./Pagination";
 import { selectors, actions } from "../articlesSlice";
-import { useClearDataOnLeave } from "common/useClearDataOnLeave";
 import { useList } from "./useList";
 import { useGoToFirstPageWhenListEmpty } from "./useGoToFirstPageWhenListEmpty";
+import { useAddHistoryItemOnPageLoad } from "./useAddHistoryItemOnPageLoad";
 import placeholder from "./placeholder.svg";
-import { useFetchOnPageLoad } from "common/useFetchOnPageLoad";
 import { getTitleText } from "./getTitleText";
 import {
   Description,
@@ -19,9 +24,7 @@ import {
   ListItem,
   StyledLink,
   TextWrapper,
-  Title
 } from "./styled";
-import { useAddHistoryItemOnPageLoad } from "./useAddHistoryItemOnPageLoad";
 
 const Articles = ({ articlesCountOnPage = 12 }) => {
   const allArticles = useSelector(selectors.selectData);

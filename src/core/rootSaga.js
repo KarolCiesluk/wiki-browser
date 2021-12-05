@@ -1,11 +1,13 @@
 import { all } from "redux-saga/effects";
 
-import { watchFetchSuggestions } from "common/textInput/textInputSaga";
-import { watchFetchArticles } from "pages/articles/articlesSaga";
-import { watchFetchArticle } from "pages/article/articleSaga";
-import { watchSearchHistoryChange } from "pages/searchHistory/searchHistorySaga";
+import { watchFetchSuggestions } from "common";
+import {
+  watchFetchArticle,
+  watchFetchArticles,
+  watchSearchHistoryChange
+} from "pages";
 
-export function* rootSaga() {
+function* rootSaga() {
   yield all([
     watchFetchSuggestions(),
     watchFetchArticles(),
@@ -13,3 +15,5 @@ export function* rootSaga() {
     watchSearchHistoryChange(),
   ]);
 };
+
+export default rootSaga;

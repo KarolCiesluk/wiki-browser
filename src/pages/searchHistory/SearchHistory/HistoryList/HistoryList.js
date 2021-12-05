@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 
-import { selectFormattedDates } from "pages/searchHistory/searchHistorySlice";
-import { SearchListOfGivenDay } from "./SearchListOfGivenDay";
 import { List } from "common";
+import { SearchListOfGivenDay } from "./SearchListOfGivenDay";
+import { selectFormattedDates } from "../../searchHistorySlice";
 
 const HistoryList = () => {
   const formattedDates = useSelector(selectFormattedDates);

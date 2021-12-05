@@ -1,6 +1,11 @@
-import { PageTitle, inputValueName, SearchForm, TextInput } from "common";
+import {
+  PageTitle,
+  inputValueName,
+  SearchForm,
+  TextInput,
+  useMediaWatcher
+} from "common";
 import { Button, FormWrapper } from "./styled";
-import { useMediaWatcher } from "common/useMediaWatcher";
 
 const Home = () => {
   const isSmallScreen = useMediaWatcher({ maxWidth: 500 });

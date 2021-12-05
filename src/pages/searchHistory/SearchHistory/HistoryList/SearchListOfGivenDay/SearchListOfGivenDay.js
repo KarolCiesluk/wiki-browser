@@ -3,15 +3,15 @@ import { nanoid } from "@reduxjs/toolkit";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { GoPrimitiveDot } from "react-icons/go";
 
+import { List, Title } from "common";
 import {
   removeHistoryItem,
-  selectHistory, toggleHistoryItemSelected
+  selectHistory,
+  toggleHistoryItemSelected,
 } from "pages/searchHistory/searchHistorySlice";
 import { formatDate } from "pages/searchHistory/formatDate";
 import { formatTime } from "./formatTime";
-import { Title } from "pages/articles/Articles/styled";
 import { Button, ListItem, StyledLink } from "./styled";
-import { List } from "common";
 
 const SearchListOfGivenDay = ({ day }) => {
   const searchHistory = useSelector(selectHistory);

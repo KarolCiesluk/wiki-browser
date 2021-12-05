@@ -1,4 +1,4 @@
-import { createListSlice } from "common/createListSlice";
+import createListSlice from "common/createListSlice";
 
 const {
   actions,

@@ -1,4 +1,16 @@
-export { default as Article } from "./article";
-export { default as Articles } from "./articles";
-export { default as SearchHistory } from "./searchHistory";
 export { default as Home } from "./home";
+export {
+  default as Article,
+  watchFetchArticle,
+  articleReducer
+} from "./article";
+export {
+  default as Articles,
+  articlesReducer,
+  watchFetchArticles
+} from "./articles";
+export {
+  default as SearchHistory,
+  watchSearchHistoryChange,
+  historyReducer
+} from "./searchHistory";

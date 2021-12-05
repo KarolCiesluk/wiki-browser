@@ -1,10 +1,10 @@
+import { useSelector } from "react-redux";
 import { useField } from "formik";
 import { Autocomplete, TextField } from "@mui/material";
-import { useSelector } from "react-redux";
 
 import { actions, selectors } from "../textInputSlice";
 import { useHandleInputChange } from "./useHandleInputChange";
-import { useClearDataOnLeave } from "common/useClearDataOnLeave";
+import { useClearDataOnLeave } from "common";
 
 const TextInput = (({ validate, ...props }) => {
   const suggestions = useSelector(selectors.selectData);

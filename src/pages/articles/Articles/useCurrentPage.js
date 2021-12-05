@@ -1,4 +1,4 @@
-import { useQueryParameter } from "common/useQueryParameter";
+import { useQueryParameter } from "common";
 
 export const useCurrentPage = () => {
   const pageQuery = useQueryParameter("page");

@@ -2,9 +2,13 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { IoLanguageSharp } from 'react-icons/io5';
 
-import { useClearDataOnLeave } from "common/useClearDataOnLeave";
-import { useFetchOnPageLoad } from "common/useFetchOnPageLoad";
-import { useQueryParameter } from "common/useQueryParameter";
+import {
+  Content,
+  useClearDataOnLeave,
+  useFetchOnPageLoad,
+  useQueryParameter
+} from "common";
+import LanguagesDrawer from "./LanguagesDrawer";
 import {
   clearArticleData,
   fetchArticle,
@@ -12,10 +16,8 @@ import {
   selectArticle,
   selectArticleStatus,
 } from "../articleSlice";
-import { ArticleTitle, LanguageButton } from "./styled";
-import LanguagesDrawer from "./LanguagesDrawer";
 import { useToggleShowLanguages } from "./useToggleShowLanguages";
-import { Content } from "common";
+import { ArticleTitle, LanguageButton } from "./styled";
 
 const Article = () => {
   const { title } = useParams();

@@ -15,7 +15,7 @@ function* searchHistoryChangeHandler() {
   yield call(saveHistoryInLocalStorage, history);
 }
 
-export function* watchSearchHistoryChange() {
+function* watchSearchHistoryChange() {
   yield takeEvery(
     [
       addHistoryItem.type,
@@ -26,3 +26,5 @@ export function* watchSearchHistoryChange() {
     searchHistoryChangeHandler
   );
 }
+
+export default watchSearchHistoryChange;

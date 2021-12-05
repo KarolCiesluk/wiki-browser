@@ -61,15 +61,6 @@ export const TextWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const Title = styled.h2`
-  line-height: 1;
-  font-weight: normal;
-
-  @media(max-width: 700px) {
-    font-size: 20px;
-  }
-`;
-
 export const Description = styled.p`
   color: #949494;
   line-height: 1.2;

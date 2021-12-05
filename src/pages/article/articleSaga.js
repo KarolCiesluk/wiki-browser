@@ -19,6 +19,8 @@ function* handleFetchArticle({ payload }) {
   }
 };
 
-export function* watchFetchArticle() {
+function* watchFetchArticle() {
   yield takeLatest(fetchArticle.type, handleFetchArticle);
 }
+
+export default watchFetchArticle;

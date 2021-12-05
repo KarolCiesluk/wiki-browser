@@ -2,10 +2,11 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 import { IoClose } from "react-icons/io5";
 
+import { CancelButton } from "common";
 import {
   selectArticleLanguages,
   selectShowLanguages
-} from "pages/article/articleSlice";
+} from "../../articleSlice";
 import { goToOtherLanguage } from "./goToOtherLanguage";
 import { useToggleShowLanguages } from "../useToggleShowLanguages";
 import {
@@ -17,7 +18,6 @@ import {
   DrawerHeader,
   DrawerTitle
 } from "./styled";
-import { CancelButton } from "common";
 
 const LanguagesDrawer = () => {
   const availableLanguages = useSelector(selectArticleLanguages);

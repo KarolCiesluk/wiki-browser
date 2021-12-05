@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { useMediaWatcher } from "common/useMediaWatcher";
+import { useMediaWatcher } from "common";
 import { getRangeNumbers } from "./getRangeNumbers";
 
 export const DOTS = "…";

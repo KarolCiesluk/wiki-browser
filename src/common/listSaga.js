@@ -1,6 +1,6 @@
 import { call, put, takeLatest, delay } from "redux-saga/effects";
 
-export function* listSaga({
+function* listSaga({
   actions,
   getListData,
   searchDelay,
@@ -19,3 +19,5 @@ export function* listSaga({
 
   yield takeLatest(actions.fetch.type, fetchListHandler);
 }
+
+export default listSaga;

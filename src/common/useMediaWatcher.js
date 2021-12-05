@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useMediaWatcher = ({ maxWidth }) => {
+const useMediaWatcher = ({ maxWidth }) => {
   const [isConditionFulfilled, setIsConditionFulfilled] = useState(
     window.innerWidth <= maxWidth ?
       true :
@@ -23,3 +23,5 @@ export const useMediaWatcher = ({ maxWidth }) => {
 
   return isConditionFulfilled;
 };
+
+export default useMediaWatcher;

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const createListSlice = ({ name }) => {
+const createListSlice = ({ name }) => {
   const initialState = {
     [name]: null,
     status: "initial",
@@ -38,3 +38,5 @@ export const createListSlice = ({ name }) => {
     reducer: listSlice.reducer,
   };
 };
+
+export default createListSlice;

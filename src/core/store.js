@@ -1,11 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 
-import suggestionsReducer from "common/textInput/textInputSlice";
-import articlesReducer from "pages/articles/articlesSlice";
-import articleReducer from "pages/article/articleSlice";
-import historyReducer from "pages/searchHistory/searchHistorySlice";
-import { rootSaga } from "core/rootSaga";
+import { suggestionsReducer } from "common";
+import rootSaga from "./rootSaga";
+import { articleReducer, articlesReducer, historyReducer } from "pages";
 
 const sagaMiddleware = createSagaMiddleware();
 
