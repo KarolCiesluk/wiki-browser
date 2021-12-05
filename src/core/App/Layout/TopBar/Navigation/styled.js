@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+import { List } from "common";
+
 export const StyledNavigation = styled.nav`
   grid-column: 3;
   justify-self: end;
@@ -11,10 +13,8 @@ export const StyledNavigation = styled.nav`
   }
 `;
 
-export const NavigationList = styled.ul`
+export const NavigationList = styled(List)`
   display: flex;
-  list-style: none;
-  padding: 0;
 `;
 
 export const NavigationLink = styled(NavLink)`
