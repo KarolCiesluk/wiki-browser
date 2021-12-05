@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Normalize } from "styled-normalize";
 import { Provider } from "react-redux";
 
-import { App, GlobalStyle, store } from "core";
+import App, { GlobalStyle, store } from "core";
 
 ReactDOM.render(
   <React.StrictMode>
