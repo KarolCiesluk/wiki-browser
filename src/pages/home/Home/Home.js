@@ -1,7 +1,10 @@
 import { PageTitle, inputValueName, SearchForm, TextInput } from "common";
 import { Button, FormWrapper } from "./styled";
+import { useMediaWatcher } from "common/useMediaWatcher";
 
 const Home = () => {
+  const isSmallScreen = useMediaWatcher({ maxWidth: 500 });
+
   return (
     <>
       <PageTitle>Wiki browser</PageTitle>
@@ -14,6 +17,7 @@ const Home = () => {
             type="text"
             label="Search Wikipedia*"
             validate
+            size={isSmallScreen ? "small" : "medium"}
           />
 
           <Button type="submit">Search</Button>

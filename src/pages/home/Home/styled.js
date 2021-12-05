@@ -25,4 +25,8 @@ export const Button = styled.button`
   &:active {
     background-color: #1976d217;
   }
+
+  @media(max-width: 500px) {
+    padding: 10px;
+  }
 `;
