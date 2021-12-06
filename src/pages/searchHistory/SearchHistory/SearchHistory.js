@@ -11,7 +11,7 @@ const SearchHistory = () => {
   return (
     <>
       {isHistoryEmpty ?
-        <PageTitle>History is empty</PageTitle> :
+        <PageTitle>Search history is empty</PageTitle> :
         <>
           <PageTitle>Search history</PageTitle>
 
