@@ -1,7 +1,9 @@
+import LoadingMessage from "./LoadingMessage/LoadingMessage";
+
 const Content = ({ status, children }) => {
   switch (status) {
     case "loading":
-      return <div>Loading…</div>;
+      return <LoadingMessage />;
 
     case "error":
       return <div>Error!</div>;
