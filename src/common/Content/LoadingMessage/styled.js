@@ -8,13 +8,6 @@ const rotate = keyframes`
   }
 `;
 
-export const Wrapper = styled.div`
-  display: grid;
-  text-align: center;
-  justify-items: center;
-  color: ${({ theme }) => theme.palette.grey[600]};
-`;
-
 export const StyledLoader = styled(FiLoader)`
   margin-top: 16px;
   animation: ${rotate} 2s linear infinite;
