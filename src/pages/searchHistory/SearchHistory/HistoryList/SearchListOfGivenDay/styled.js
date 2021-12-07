@@ -3,18 +3,18 @@ import styled, { css } from "styled-components";
 
 export const ListItem = styled.li`
   display: grid;
-  color: #757575;
+  color: ${({ theme }) => theme.palette.grey[600]};
   grid-template-columns: auto auto 1fr auto;
   align-items: center;
   grid-column-gap: 10px;
   padding: 12px 0;
-  border-bottom: 1px solid #EAEEF3;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.grey[200]};
   word-break: break-word;
 `;
 
 export const Button = styled.button`
   background: none;
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.shape.borderRadius}px;
   width: 20px;
   height: 20px;
   padding: 0;
@@ -24,21 +24,21 @@ export const Button = styled.button`
   cursor: pointer;
 
   ${({ toggleSelected }) => toggleSelected && css`
-    color: #1c76d2;
-    border: 2px solid #1c76d2;
+    color: ${({ theme }) => theme.palette.primary.main};
+    border: 2px solid ${({ theme }) => theme.palette.primary.main};
   `}
 
   ${({ remove }) => remove && css`
     border: none;
-    color: red;
+    color: ${({ theme }) => theme.palette.remove.main};
 
     &:hover {
-      background-color: #ffc6c1;
+      background-color: ${({ theme }) => theme.palette.remove.hover};
     }
   `}
 `;
 
 export const StyledLink = styled(Link)`
   margin-left: 24px;
-  color: #1c76d2;
+  color: ${({ theme }) => theme.palette.primary.main};
 `;

@@ -2,12 +2,10 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   padding: 40px;
-  border-radius: 4px;
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: ${({ theme }) => theme.shape.borderRadius}px;
+  box-shadow: ${({ theme }) => theme.shadows[5]};
 
-  @media(max-width: 700px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.md}px) {
     padding: 22px;
   }
 `;

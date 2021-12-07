@@ -6,14 +6,15 @@ const CancelButton = styled.button`
   align-items: center;
   background: none;
   border: none;
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.shape.borderRadius}px;
   cursor: pointer;
   padding: 4px;
   font-size: 24px;
   color: inherit;
+  transition: background ${({ theme }) => theme.transitions.duration.short}ms;
 
   &:hover {
-    background-color: #0000000a;
+    background-color: ${({ theme }) => theme.palette.action.hover};
   }
 
   ${({ cancelSelected }) => cancelSelected && css`

@@ -9,42 +9,43 @@ export const Wrapper = styled.nav`
   align-items: center;
   justify-content: center;
 
-  @media(max-width: 500px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     margin-top: 32px;
     font-size: 16px;
   }
 `;
 
 export const Button = styled.button`
-  font-family: sans-serif;
-  font-weight: 300;
+  font-weight: ${({ theme }) => theme.typography.fontWeightLight};
   border: none;
   background: none;
   cursor: pointer;
   min-width: 3ch;
   padding: 6px 10px;
-  border-radius: 16px;
+  border-radius: ${({ theme }) => theme.shape.paginationBorderRadius}px;
   margin: auto 2px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.2s;
+  transition: all ${({ theme }) => theme.transitions.duration.shorter}ms;
 
-  @media(max-width: 500px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     padding: 4px 8px;
   }
 
   &:focus-visible {
     outline: none;
+    box-shadow: ${({ theme }) => theme.shadows[1]};
   }
 
   &:hover {
     outline: none;
+    box-shadow: ${({ theme }) => theme.shadows[1]};
   }
 
   ${({ selected }) => selected && css`
-    color: white;
-    background: black;
+    color: ${({ theme }) => theme.palette.common.white};
+    background: ${({ theme }) => theme.palette.common.black};
   `}
 
   ${({ disabled }) => disabled && css`
@@ -60,11 +61,11 @@ export const Strong = styled.strong`
   display: inline-flex;
   align-items: center;
 
-  @media(max-width: 500px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.md}px) {
     padding: 5px;
   }
 
-  @media(max-width: 500px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     padding: 3px;
   }
 `;
@@ -77,7 +78,7 @@ export const StyledArrow = styled(({
 }) => <Arrow {...otherProps} />)`
   margin-left: ${arrowGap}px;
 
-  @media(max-width: 500px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     margin: 0;
   }
 
@@ -89,7 +90,7 @@ export const StyledArrow = styled(({
 `;
 
 export const LinkText = styled.span`
-  @media(max-width: 500px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     display: none;
   }
 `;

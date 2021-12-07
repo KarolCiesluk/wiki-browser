@@ -9,22 +9,22 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin-right: 60px;
-  color: #757575;
+  color: ${({ theme }) => theme.palette.grey[600]};
   line-height: 1;
 `;
 
 export const DeleteButton = styled.button`
-  color: red;
+  color: ${({ theme }) => theme.palette.error.main};
   border: none;
   text-transform: uppercase;
   background: none;
   margin: 0;
   padding: 8px 0;
   cursor: pointer;
-  transition: transform 0.1s;
+  transition: transform ${({ theme }) => theme.transitions.duration.shortest}ms;
 
   ${({ clear }) => clear && css`
-    color: #1976d2;
+    color: ${({ theme }) => theme.palette.primary.main};
   `}
 
   &:hover {

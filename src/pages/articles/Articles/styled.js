@@ -8,24 +8,24 @@ export const ArticleList = styled(List)`
   grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
   grid-gap: 16px;
 
-  @media(max-width: 500px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     grid-template-columns: 1fr;
   }
 `;
 
 export const ListItem = styled.li`
   border-radius: 4px;
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  transition: transform 0.2s, color 0.2s;
+  box-shadow: ${({ theme }) => theme.shadows[5]};
+  transition:
+    transform ${({ theme }) => theme.transitions.duration.short}ms,
+    color ${({ theme }) => theme.transitions.duration.short}ms;
 
   &:hover {
     transform: scale(1.05);
   }
 
   &:active {
-    background-color: #1976d217;
+    background-color: ${({ theme }) => theme.palette.action.activeDenim};
   }
 `;
 
@@ -37,7 +37,7 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
 
-  @media(max-width: 500px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
     grid-column-gap: 8px;
@@ -62,6 +62,6 @@ export const TextWrapper = styled.div`
 `;
 
 export const Description = styled.p`
-  color: #949494;
+  color: ${({ theme }) => theme.palette.grey[600]};
   line-height: 1.2;
 `;

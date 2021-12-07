@@ -11,9 +11,9 @@ export const Background = styled.div`
   width: 100%;
   top: 0;
   left: 0;
-  background-color: #00000080;
+  background-color: ${({ theme }) => theme.palette.background.dark};
   backdrop-filter: blur(2px);
-  transition: opacity 0.4s;
+  transition: opacity ${({ theme }) => theme.transitions.duration.complex}ms;
   z-index: 1;
 
   ${({ open }) => open && css`
@@ -23,8 +23,8 @@ export const Background = styled.div`
 `;
 
 export const StyledDrawer = styled.aside`
-  background-color: white;
-  color: #757575;
+  background-color: ${({ theme }) => theme.palette.common.white};
+  color: ${({ theme }) => theme.palette.grey[600]};
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -35,10 +35,8 @@ export const StyledDrawer = styled.aside`
   left: 0;
   width: 100vw;
   z-index: 1;
-  box-shadow:
-    rgb(0 0 0 / 20%) 0px 8px 10px -5px, rgb(0 0 0 / 14%) 0px 16px 24px 2px,
-    rgb(0 0 0 / 12%) 0px 6px 30px 5px;
-  transition: top 0.4s;
+  box-shadow: ${({ theme }) => theme.shadows[5]};
+  transition: top ${({ theme }) => theme.transitions.duration.complex}ms;
 
   ${({ active }) => active && css`
     top: 0;
@@ -49,7 +47,7 @@ export const DrawerHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #EAEEF3;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.grey[200]};
 `;
 
 export const DrawerTitle = styled.h2`

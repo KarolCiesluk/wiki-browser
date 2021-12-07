@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineSearch } from 'react-icons/ai';
 
 export const Header = styled.header`
-  border-bottom: 1px solid #EAEEF3;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.grey[200]};
   padding: 8px 0;
 `;
 
@@ -28,7 +28,7 @@ export const LogoLink = styled(Link)`
 `;
 
 export const LogoImage = styled.img`
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     width: 40px;
     height: 40px;
   }
@@ -36,11 +36,11 @@ export const LogoImage = styled.img`
 
 export const LogoText = styled.span`
   font-size: 20px;
-  color: black;
+  color: ${({ theme }) => theme.palette.common.black};
   align-self: center;
   margin-left: 8px;
 
-  @media (max-width: 750px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.values.md}px) {
     display: none;
   }
 `;
@@ -50,7 +50,7 @@ export const FormWrapper = styled.div`
   justify-self: end;
   min-width: 250px;
 
-  @media(max-width: 600px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     grid-column: span 2;
     justify-self: center;
     width: 100%;
@@ -76,12 +76,12 @@ export const SearchButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #eaeef3;
+    background-color: ${({ theme }) => theme.palette.action.hover};
   }
 `;
 
 export const StyledSearchIcon = styled(AiOutlineSearch)`
   width: 14px;
   height: auto;
-  color: #666666;
+  color: ${({ theme }) => theme.palette.grey[600]};
 `;

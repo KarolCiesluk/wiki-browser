@@ -9,24 +9,25 @@ export const FormWrapper = styled(Wrapper)`
 `;
 
 export const Button = styled.button`
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.shape.borderRadius}px;
   padding: 16px;
-  border: 1px solid #1976d280;
-  font-weight: 500;
+  border: 1px solid ${({ theme }) => theme.palette.primary.main};
+  font-weight: ${({ theme }) => theme.typography.fontWeightMedium};
   font-size: 14px;
-  color: #1976d2;
+  cursor: pointer;
+  color: ${({ theme }) => theme.palette.primary.main};
   text-transform: uppercase;
   background-color: unset;
 
   &:hover {
-    background-color: #1976d20a;
+    background-color: ${({ theme }) => theme.palette.action.hoverDenim};
   }
 
   &:active {
-    background-color: #1976d217;
+    background-color: ${({ theme }) => theme.palette.action.activeDenim};
   }
 
-  @media(max-width: 500px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     padding: 10px;
   }
 `;
