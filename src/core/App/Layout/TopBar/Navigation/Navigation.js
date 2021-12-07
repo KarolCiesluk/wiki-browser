@@ -1,3 +1,4 @@
+import { toHistory, toHome } from "core";
 import { NavigationLink, NavigationList, StyledNavigation } from "./styled";
 
 const Navigation = () => {
@@ -6,13 +7,13 @@ const Navigation = () => {
       <NavigationList>
 
         <li>
-          <NavigationLink to="/">
+          <NavigationLink to={toHome()}>
             Home
           </NavigationLink>
         </li>
 
         <li>
-          <NavigationLink to="history">
+          <NavigationLink to={toHistory()}>
             Search History
           </NavigationLink>
         </li>

@@ -1,4 +1,5 @@
 import { PageTitle, PrimaryButton } from "common";
+import { toHome } from "core";
 import { MessageWrapper } from "../MessageWrapper";
 import { WarningIcon, Paragraph } from "./styled";
 
@@ -14,7 +15,7 @@ const ErrorMessage = () => (
       Please check your network connection<br />and try again
     </Paragraph>
 
-    <PrimaryButton link to="/">
+    <PrimaryButton link to={toHome()}>
       Back to homepage
     </PrimaryButton>
 

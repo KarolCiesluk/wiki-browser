@@ -2,6 +2,7 @@ import { useLocation } from "react-router";
 
 import Container from "../Container";
 import { inputValueName, SearchForm, TextInput } from "common";
+import { toHome } from "core";
 import { Navigation } from "./Navigation";
 import {
   FormWrapper,
@@ -24,7 +25,7 @@ const TopBar = () => {
       <Container as="div">
         <TopBarGrid>
 
-          <LogoLink to="/">
+          <LogoLink to={toHome()}>
 
             <LogoImage
               src={wikipediaIcon}

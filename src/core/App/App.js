@@ -7,6 +7,7 @@ import {
 
 import { Layout } from "./Layout";
 import { Article, Articles, Home, SearchHistory } from "pages";
+import { toArticle, toArticles, toHistory, toHome } from "core";
 
 function App() {
   return (
@@ -15,26 +16,29 @@ function App() {
         <Routes>
 
           <Route
-            path="/"
+            path={toHome()}
             element={<Home />}
           />
 
           <Route
-            path="article/:title"
+            path={toArticle(":title")}
             element={<Article />}
           />
 
           <Route
-            path="articles/:query"
+            path={toArticles(":query")}
             element={<Articles />}
           />
 
           <Route
-            path="history"
+            path={toHistory()}
             element={<SearchHistory />}
           />
 
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route
+            path="*"
+            element={<Navigate to={toHome()} />}
+          />
 
         </Routes>
       </Layout>

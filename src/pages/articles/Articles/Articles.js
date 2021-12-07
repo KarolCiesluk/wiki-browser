@@ -25,6 +25,7 @@ import {
   StyledLink,
   TextWrapper,
 } from "./styled";
+import { toArticle } from "core";
 
 const Articles = ({ articlesCountOnPage = 12 }) => {
   const allArticles = useSelector(selectors.selectData);
@@ -64,7 +65,7 @@ const Articles = ({ articlesCountOnPage = 12 }) => {
           {articles.map(article =>
             <ListItem key={nanoid()}>
               <StyledLink
-                to={`/article/${article.key}`}
+                to={`${toArticle(article.key)}`}
               >
                 <ImageWrapper url={article.thumbnail?.url}>
                   <Image

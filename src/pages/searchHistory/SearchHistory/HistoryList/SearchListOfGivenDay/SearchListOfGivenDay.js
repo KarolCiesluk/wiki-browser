@@ -12,6 +12,7 @@ import {
 import { formatDate } from "pages/searchHistory/formatDate";
 import { formatTime } from "./formatTime";
 import { Button, ListItem, StyledLink } from "./styled";
+import { toArticles } from "core";
 
 const SearchListOfGivenDay = ({ day }) => {
   const searchHistory = useSelector(selectHistory);
@@ -37,7 +38,7 @@ const SearchListOfGivenDay = ({ day }) => {
                 {formatTime(item.date)}
               </time>
 
-              <StyledLink to={`../articles/${item.query}`}>
+              <StyledLink to={`${toArticles(item.query)}`}>
                 {item.query}
               </StyledLink>
 

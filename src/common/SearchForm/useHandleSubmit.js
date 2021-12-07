@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router";
 
+import { toArticles } from "core";
+
 export const useHandleSubmit = (inputValueName) => {
   const navigate = useNavigate();
 
@@ -7,7 +9,7 @@ export const useHandleSubmit = (inputValueName) => {
     const query = values[inputValueName].trim();
 
     if (query) {
-      navigate(`articles/${query}`);
+      navigate(toArticles(query));
     }
   };
 };
