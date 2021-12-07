@@ -18,3 +18,4 @@ export { default as useClearDataOnLeave } from "./useClearDataOnLeave";
 export { default as useFetchOnPageLoad } from "./useFetchOnPageLoad";
 export { default as useMediaWatcher } from "./useMediaWatcher";
 export { default as useQueryParameter } from "./useQueryParameter";
+export { defaultLanguageCode } from "./defaultLanguageCode";
