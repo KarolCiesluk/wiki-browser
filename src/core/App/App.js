@@ -1,4 +1,9 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 
 import { Layout } from "./Layout";
 import { Article, Articles, Home, SearchHistory } from "pages";
@@ -29,7 +34,7 @@ function App() {
             element={<SearchHistory />}
           />
 
-          <Route path="*" element={<div>Not Found</div>} />
+          <Route path="*" element={<Navigate to="/" />} />
 
         </Routes>
       </Layout>
