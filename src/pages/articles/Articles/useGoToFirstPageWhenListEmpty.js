@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { useGoToPage } from "./Pagination/useGoToPage";
+import { useGoToPage } from "./useGoToPage";
 import { useCurrentPage } from "./useCurrentPage";
 
 export const useGoToFirstPageWhenListEmpty = (list) => {

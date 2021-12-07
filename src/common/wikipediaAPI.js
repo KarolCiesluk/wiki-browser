@@ -1,4 +1,10 @@
-const getWikipediaData = async ({ language = "en", endpoint, queryParams = "" }) => {
+import { defaultLanguageCode } from "common";
+
+const getWikipediaData = async ({
+  language = defaultLanguageCode,
+  endpoint,
+  queryParams = ""
+}) => {
   const API_URL = `https://${language}.wikipedia.org/w/rest.php/v1/`;
 
   const response = await fetch(`${API_URL}${endpoint}${queryParams}`);

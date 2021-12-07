@@ -4,6 +4,7 @@ import { IoLanguageSharp } from 'react-icons/io5';
 
 import {
   Content,
+  defaultLanguageCode,
   useClearDataOnLeave,
   useFetchOnPageLoad,
   useQueryParameter
@@ -17,11 +18,12 @@ import {
   selectArticleStatus,
 } from "../articleSlice";
 import { useToggleShowLanguages } from "./useToggleShowLanguages";
+import { languageQueryName } from "./languageQueryName";
 import { ArticleTitle, LanguageButton } from "./styled";
 
 const Article = () => {
   const { title } = useParams();
-  const language = useQueryParameter("language") || "en";
+  const language = useQueryParameter(languageQueryName) || defaultLanguageCode;
 
   const status = useSelector(selectArticleStatus);
   const article = useSelector(selectArticle);

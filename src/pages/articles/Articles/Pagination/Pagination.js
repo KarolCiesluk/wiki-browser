@@ -1,5 +1,5 @@
 import { DOTS, usePagination } from "./usePagination";
-import { useGoToPage } from "./useGoToPage";
+import { useGoToPage } from "../useGoToPage";
 import { useCurrentPage } from "../useCurrentPage";
 import {
   Button,
