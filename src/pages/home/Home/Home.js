@@ -1,3 +1,5 @@
+import { useTheme } from "@mui/material";
+
 import {
   PageTitle,
   inputValueName,
@@ -8,7 +10,11 @@ import {
 import { Button, FormWrapper } from "./styled";
 
 const Home = () => {
-  const isSmallScreen = useMediaWatcher({ maxWidth: 500 });
+  const theme = useTheme();
+
+  const isSmallScreen = useMediaWatcher({
+    maxWidth: theme.breakpoints.values.sm
+  });
 
   return (
     <>

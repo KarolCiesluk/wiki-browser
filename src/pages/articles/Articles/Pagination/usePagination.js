@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { useTheme } from "@mui/material";
 
 import { useMediaWatcher } from "common";
 import { getRangeNumbers } from "./getRangeNumbers";
@@ -10,7 +11,12 @@ export const usePagination = ({
   currentPage,
   initialSiblingCount = 1,
 }) => {
-  const isSmallScreen = useMediaWatcher({ maxWidth: 500 });
+  const theme = useTheme();
+
+  const isSmallScreen = useMediaWatcher({
+    maxWidth: theme.breakpoints.values.md,
+  });
+
   const siblingCount = isSmallScreen ? initialSiblingCount - 1 : initialSiblingCount;
 
   const paginationRange = useMemo(() => {
