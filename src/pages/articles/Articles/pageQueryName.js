@@ -1,0 +1,1 @@
+export const pageQueryName = "page";
