@@ -5,9 +5,10 @@ import {
   inputValueName,
   SearchForm,
   TextInput,
-  useMediaWatcher
+  useMediaWatcher,
+  PrimaryButton
 } from "common";
-import { Button, FormWrapper } from "./styled";
+import { FormWrapper } from "./styled";
 
 const Home = () => {
   const theme = useTheme();
@@ -22,6 +23,7 @@ const Home = () => {
 
       <SearchForm>
         <FormWrapper>
+
           <TextInput
             autoFocus
             name={inputValueName}
@@ -31,7 +33,10 @@ const Home = () => {
             size={isSmallScreen ? "small" : "medium"}
           />
 
-          <Button type="submit">Search</Button>
+          <PrimaryButton as="button" type="submit">
+            Search
+          </PrimaryButton>
+
         </FormWrapper>
       </SearchForm>
     </>

@@ -1,14 +1,14 @@
 import { PageTitle } from "common";
-import { StyledLoader, Wrapper } from "./styled";
+import { MessageWrapper } from "../MessageWrapper";
+import { StyledLoader } from "./styled";
 
 const LoadingMessage = () => (
-  <Wrapper>
+  <MessageWrapper loader>
     <PageTitle>
-      Loading...
+      Loading…
     </PageTitle>
-
     <StyledLoader />
-  </Wrapper>
+  </MessageWrapper>
 );
 
 export default LoadingMessage;
