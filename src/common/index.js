@@ -10,6 +10,7 @@ export { default as CancelButton } from "./CancelButton";
 export { default as List } from "./List";
 export { default as Content } from "./Content";
 export { default as Title } from "./Title";
+export { default as PrimaryButton } from "./PrimaryButton";
 export { default as inputValueName } from "./inputValueName";
 export { default as createListSlice } from "./createListSlice";
 export { default as listSaga } from "./listSaga";
