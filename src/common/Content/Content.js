@@ -1,4 +1,5 @@
-import LoadingMessage from "./LoadingMessage/LoadingMessage";
+import { ErrorMessage } from "./ErrorMessage";
+import { LoadingMessage } from "./LoadingMessage";
 
 const Content = ({ status, children }) => {
   switch (status) {
@@ -6,7 +7,7 @@ const Content = ({ status, children }) => {
       return <LoadingMessage />;
 
     case "error":
-      return <div>Error!</div>;
+      return <ErrorMessage />;
 
     case "success":
       return children;
