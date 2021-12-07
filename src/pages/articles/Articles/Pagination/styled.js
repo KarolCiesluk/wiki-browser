@@ -35,24 +35,30 @@ export const Button = styled.button`
 
   &:focus-visible {
     outline: none;
-    box-shadow: ${({ theme }) => theme.shadows[1]};
+    background-color: ${({ theme }) => theme.palette.grey[200]};
   }
 
   &:hover {
     outline: none;
-    box-shadow: ${({ theme }) => theme.shadows[1]};
+    background-color: ${({ theme }) => theme.palette.grey[200]};
   }
 
   ${({ selected }) => selected && css`
     color: ${({ theme }) => theme.palette.common.white};
     background: ${({ theme }) => theme.palette.common.black};
+
+    &:hover {
+    outline: none;
+    background: ${({ theme }) => theme.palette.common.black};
+    }
+
   `}
 
   ${({ disabled }) => disabled && css`
     cursor: not-allowed;
 
     &:hover {
-      box-shadow: none;
+      background: none;
     }
   `}
 `;
