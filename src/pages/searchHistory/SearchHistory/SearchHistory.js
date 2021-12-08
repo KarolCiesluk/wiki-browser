@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { FaHistory } from "react-icons/fa";
 
 import { PageTitle, Wrapper } from "common";
 import { Buttons } from "./Buttons";
@@ -11,7 +12,9 @@ const SearchHistory = () => {
   return (
     <>
       {isHistoryEmpty ?
-        <PageTitle>Search history is empty</PageTitle> :
+        <PageTitle historyIsEmpty>
+          <FaHistory /><br />Search history is empty
+        </PageTitle> :
         <>
           <PageTitle>Search history</PageTitle>
 
