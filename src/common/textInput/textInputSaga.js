@@ -1,4 +1,3 @@
-
 import { listSaga } from "common";
 import { getSuggestions } from "./suggestionsAPI";
 import { actions } from "./textInputSlice";
