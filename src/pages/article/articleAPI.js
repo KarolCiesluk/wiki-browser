@@ -4,7 +4,7 @@ export const getArticle = async ({ value: title, language }) => {
   return await getArticleData({
     title,
     language,
-    endpoint: "/with_html",
+    endpoint: "/bare",
   });
 };
 
