@@ -12,16 +12,10 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Roboto', sans-serif;
-    overflow-wrap: break-word;
 
     @media (max-width: 400px) {
       font-size: 14px;
     }
-  }
-
-  table {
-    display: block;
-    overflow: auto;
   }
 `;
 
