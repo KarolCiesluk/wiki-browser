@@ -52,6 +52,7 @@ export const DrawerHeader = styled.header`
 
 export const DrawerTitle = styled.h2`
   font-size: 24px;
+  font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     font-size: 18px;
