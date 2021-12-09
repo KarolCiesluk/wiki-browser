@@ -45,7 +45,6 @@ const Article = () => {
     <Content status={status}>
 
       <ArticleTitle>
-
         {areLanguagesAvailable &&
           <>
             <LanguagesDrawer />
@@ -62,11 +61,12 @@ const Article = () => {
         {article?.title}
       </ArticleTitle>
 
-      {!!article?.html &&
-        <div
-          dangerouslySetInnerHTML={{ __html: article?.html }}
-        />
-      }
+      <iframe
+        title="Wikipedia article"
+        src={article?.html_url}
+        width="100%"
+        height="450px"
+      />
 
     </Content>
   );
