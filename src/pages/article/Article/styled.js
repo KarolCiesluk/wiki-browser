@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { PageTitle } from "common";
 
 export const ArticleTitle = styled(PageTitle)`
-  border: none;
   display: flex;
   align-items: center;
 `;

@@ -51,9 +51,11 @@ export const DrawerHeader = styled.header`
 `;
 
 export const DrawerTitle = styled.h2`
-  border: none;
-  font-size: 28px;
-  color: inherit;
+  font-size: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
+    font-size: 18px;
+  }
 `;
 
 export const LanguagesList = styled(List)`
@@ -74,5 +76,9 @@ export const StyledLink = styled(Link)`
 
   &:visited {
     color: inherit;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
+    font-size: 16px;
   }
 `;
