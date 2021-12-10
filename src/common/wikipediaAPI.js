@@ -29,7 +29,13 @@ export const getListData = async ({ query, endpoint, limit }) => {
   });
 };
 
-export const getArticleData = async ({ title, language, endpoint, signal, throwError }) => {
+export const getArticleData = async ({
+  title,
+  language,
+  endpoint,
+  signal,
+  throwError,
+}) => {
   return await getWikipediaData({
     endpoint: `page/${title}${endpoint}`,
     language,
