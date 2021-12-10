@@ -1,9 +1,5 @@
 export { default as Home } from "./home";
-export {
-  default as Article,
-  watchFetchArticle,
-  articleReducer
-} from "./article";
+export { default as Article } from "./article";
 export {
   default as Articles,
   articlesReducer,
