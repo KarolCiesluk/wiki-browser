@@ -1,7 +1,55 @@
-# Getting Started with Create React App
+# Wiki Browser
+
+![Wiki Browser logo](./readmeImage.png)
+
+## Table of Contents
+1. [Demo](#demo)
+2. [Description](#description)
+3. [Technologies](#technologies)
+4. [How to use](#how-to-use)
+5. [Available Scripts](#available-scripts)
+
+## Demo
+
+https://karolciesluk.github.io/wiki-browser/
+
+## Description
+
+The Wiki Browser is an app based on [Media Wiki REST_API](https://www.mediawiki.org/wiki/API:REST_API/Reference) that allows users to search wikipedia articles. Currently only search for articles in english is available.
+
+Users have possibility to view:
+- List of articles with short description and miniature images.
+- Full article with possibility to read it in other language (if available).
+- History of recent searches.
+
+The Wiki Browser app was made as a recruitment task for the [Intive Patronage Program](https://intive.com/insights/the-patronage-program).
+
+## Technologies
+- HTML
+- Javascript ES6
+- React.js
+- React Hooks
+- Babel
+- JSX
+- Styled-Components
+- Styled-Normalized
+- CSS Flexbox
+- CSS Grid
+- Media Queries
+- React Router v6
+- Fetch API
+- React Redux
+- Redux-Saga
+- Material UI
+- Formik
+- Yup
+- React-icons
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How to use
+
+<!-- ![How to use demonstration](src/...) -->
 ## Available Scripts
 
 In the project directory, you can run:
@@ -13,11 +61,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -38,33 +81,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
