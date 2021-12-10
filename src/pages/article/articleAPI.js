@@ -13,5 +13,6 @@ export const getArticleLanguages = async ({ value: title, language }) => {
     title,
     language,
     endpoint: "/links/language",
+    throwError: false,
   });
 };
