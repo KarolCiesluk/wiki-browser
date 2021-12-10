@@ -1,45 +1,20 @@
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { IoLanguageSharp } from 'react-icons/io5';
 
-import {
-  Content,
-  defaultLanguageCode,
-  useClearDataOnLeave,
-  useFetchOnPageLoad,
-  useQueryParameter
-} from "common";
+import { Content } from "common";
 import LanguagesDrawer from "./LanguagesDrawer";
-import {
-  clearArticleData,
-  fetchArticle,
-  selectAreLanguagesAvailable,
-  selectArticle,
-  selectArticleStatus,
-} from "../articleSlice";
-import { useToggleShowLanguages } from "./useToggleShowLanguages";
-import { languageQueryName } from "./languageQueryName";
 import { ArticleTitle, LanguageButton } from "./styled";
+import { useArticlePageState } from "./useArticlePageState";
 
 const Article = () => {
-  const { title } = useParams();
-  const language = useQueryParameter(languageQueryName) || defaultLanguageCode;
+  const [status, article, languages] = useArticlePageState();
+  const [showLanguages, setShowLanguages] = useState(false);
 
-  const status = useSelector(selectArticleStatus);
-  const article = useSelector(selectArticle);
-  const areLanguagesAvailable = useSelector(selectAreLanguagesAvailable);
+  const areLanguagesAvailable = !!languages?.length;
 
-  useFetchOnPageLoad({
-    fetchAction: fetchArticle,
-    value: title,
-    language,
-  });
-
-  const toggleShowLanguages = useToggleShowLanguages();
-
-  useClearDataOnLeave({
-    clearAction: clearArticleData,
-  });
+  const toggleShowLanguages = () => {
+    setShowLanguages(!showLanguages);
+  };
 
   return (
     <Content status={status}>
@@ -47,7 +22,11 @@ const Article = () => {
       <ArticleTitle>
         {areLanguagesAvailable &&
           <>
-            <LanguagesDrawer />
+            <LanguagesDrawer
+              showLanguages={showLanguages}
+              availableLanguages={languages}
+              onClick={toggleShowLanguages}
+            />
 
             <LanguageButton
               onClick={toggleShowLanguages}
