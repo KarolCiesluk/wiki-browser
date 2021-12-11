@@ -1,6 +1,8 @@
+import { defaultLanguageCode } from "common";
+
 export const formatDate = jsonDate => {
   return new Date(jsonDate).toLocaleDateString(
-    "en",
+    defaultLanguageCode,
     { month: "long", weekday: "long", day: "numeric", year: "numeric" }
   );
 };
