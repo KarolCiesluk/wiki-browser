@@ -17,7 +17,7 @@ function* handleFetchArticle({ payload }) {
   } catch (error) {
     yield put(fetchArticleError());
   }
-};
+}
 
 function* watchFetchArticle() {
   yield takeLatest(fetchArticle.type, handleFetchArticle);

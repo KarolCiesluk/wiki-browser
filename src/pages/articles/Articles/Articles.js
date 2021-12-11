@@ -10,6 +10,7 @@ import {
   useFetchOnPageLoad
 } from "common";
 import { Pagination } from "./Pagination";
+import { toArticle } from "core";
 import { selectors, actions } from "../articlesSlice";
 import { useList } from "./useList";
 import { useGoToFirstPageWhenListEmpty } from "./useGoToFirstPageWhenListEmpty";
@@ -25,7 +26,6 @@ import {
   StyledLink,
   TextWrapper,
 } from "./styled";
-import { toArticle } from "core";
 
 const Articles = ({ articlesCountOnPage = 12 }) => {
   const allArticles = useSelector(selectors.selectData);
@@ -65,7 +65,7 @@ const Articles = ({ articlesCountOnPage = 12 }) => {
           {articles.map(article =>
             <ListItem key={nanoid()}>
               <StyledLink
-                to={`${toArticle(article.key)}`}
+                to={toArticle(article.key)}
               >
                 <ImageWrapper url={article.thumbnail?.url}>
                   <Image

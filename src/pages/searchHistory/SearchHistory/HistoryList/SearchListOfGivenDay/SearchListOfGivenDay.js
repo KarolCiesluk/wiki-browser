@@ -38,7 +38,7 @@ const SearchListOfGivenDay = ({ day }) => {
                 {formatTime(item.date)}
               </time>
 
-              <StyledLink to={`${toArticles(item.query)}`}>
+              <StyledLink to={toArticles(item.query)}>
                 {item.query}
               </StyledLink>
 

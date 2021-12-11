@@ -28,7 +28,7 @@ const searchHistorySlice = createSlice({
       history[index].selected = !history[index].selected;
     },
     removeSelectedHistoryItems: (state) => {
-      state.history = state.history.filter(historyItem => !historyItem.selected);;
+      state.history = state.history.filter(historyItem => !historyItem.selected);
     },
     unselectAllHistoryItems: ({ history }) => {
       for (const historyItem of history) {

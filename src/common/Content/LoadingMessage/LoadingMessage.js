@@ -4,9 +4,11 @@ import { StyledLoader } from "./styled";
 
 const LoadingMessage = () => (
   <MessageWrapper loader>
+
     <PageTitle>
       Loading…
     </PageTitle>
+
     <StyledLoader />
   </MessageWrapper>
 );
