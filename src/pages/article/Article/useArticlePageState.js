@@ -1,7 +1,7 @@
-import { defaultLanguageCode, useQueryParameter } from "common";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+
+import { defaultLanguageCode, useQueryParameter } from "common";
 import { getArticle, getArticleLanguages } from "../articleAPI";
 import { languageQueryName } from "./languageQueryName";
 
