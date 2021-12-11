@@ -49,7 +49,7 @@ The Wiki Browser app was made as a recruitment task for the [Intive Patronage Pr
 
 Since it's a recruitment task my intention was to show usage of as many technologies as possible and to present the whole spectrum of my abilities and skills.
 
-At the same time I am aware of the fact that it's possible to utilize more simle solutions. Especially I mean usage of React Redux and Redux-Saga technologies. Fetching data from [Media Wiki REST_API](https://www.mediawiki.org/wiki/API:REST_API/Reference) can be done with `useEffect` hook only.
+At the same time I am aware of the fact that it's possible to utilize more simple solutions. Especially I mean usage of React Redux and Redux-Saga technologies. Fetching data from [Media Wiki REST_API](https://www.mediawiki.org/wiki/API:REST_API/Reference) can be done with `useEffect` hook only.
 
 Therefore I've decided to add a little example of how it can be done on branch "fetchWithoutReduxAndSaga" in [src/pages/article](https://github.com/KarolCiesluk/wiki-browser/tree/fetchWithoutReduxAndSaga/src/pages/article) folder.
 
