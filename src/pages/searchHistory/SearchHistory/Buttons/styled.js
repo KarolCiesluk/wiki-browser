@@ -11,6 +11,10 @@ export const Wrapper = styled.div`
   margin-right: 60px;
   color: ${({ theme }) => theme.palette.grey[600]};
   line-height: 1;
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
+    margin-right: 22px;
+  }
 `;
 
 export const DeleteButton = styled.button`

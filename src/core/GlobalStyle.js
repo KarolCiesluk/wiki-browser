@@ -7,13 +7,12 @@ const GlobalStyle = createGlobalStyle`
 
   *, ::after, ::before {
     box-sizing: inherit;
-    max-width: 100%;
   }
 
   body {
     font-family: 'Roboto', sans-serif;
 
-    @media (max-width: 400px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
       font-size: 14px;
     }
   }
