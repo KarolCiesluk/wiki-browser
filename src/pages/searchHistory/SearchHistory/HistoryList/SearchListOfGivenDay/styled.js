@@ -23,6 +23,10 @@ export const Button = styled.button`
   justify-content: center;
   cursor: pointer;
 
+  &:focus {
+    outline-offset: 2px;
+  }
+
   ${({ toggleSelected }) => toggleSelected && css`
     color: ${({ theme }) => theme.palette.primary.main};
     border: 2px solid ${({ theme }) => theme.palette.primary.main};
@@ -41,4 +45,5 @@ export const Button = styled.button`
 export const StyledLink = styled(Link)`
   margin-left: 24px;
   color: ${({ theme }) => theme.palette.primary.main};
+  line-height: 1.3;
 `;

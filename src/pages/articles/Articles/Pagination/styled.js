@@ -47,11 +47,15 @@ export const Button = styled.button`
     color: ${({ theme }) => theme.palette.common.white};
     background: ${({ theme }) => theme.palette.common.black};
 
-    &:hover {
-    outline: none;
-    background: ${({ theme }) => theme.palette.common.black};
+    &:focus-visible {
+      outline: none;
+      background: ${({ theme }) => theme.palette.common.black};
     }
 
+    &:hover {
+      outline: none;
+      background: ${({ theme }) => theme.palette.common.black};
+    }
   `}
 
   ${({ disabled }) => disabled && css`

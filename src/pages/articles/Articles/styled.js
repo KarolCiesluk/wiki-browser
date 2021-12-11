@@ -36,6 +36,12 @@ export const StyledLink = styled(Link)`
   padding: 16px;
   text-decoration: none;
   color: inherit;
+  transition: outline ${({ theme }) => theme.transitions.duration.shortest}ms;
+
+  &:focus {
+    border-radius: 4px;
+    outline: 4px solid ${({ theme }) => theme.palette.primary.light};
+  }
 
   @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
     grid-template-columns: 1fr 2fr;

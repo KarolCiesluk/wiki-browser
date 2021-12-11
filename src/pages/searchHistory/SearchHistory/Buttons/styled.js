@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   line-height: 1;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.values.sm}px) {
-    margin-right: 22px;
+    margin-right: 18px;
   }
 `;
 
@@ -23,7 +23,7 @@ export const DeleteButton = styled.button`
   text-transform: uppercase;
   background: none;
   margin: 0;
-  padding: 8px 0;
+  padding: 8px 2px;
   cursor: pointer;
   transition: transform ${({ theme }) => theme.transitions.duration.shortest}ms;
 

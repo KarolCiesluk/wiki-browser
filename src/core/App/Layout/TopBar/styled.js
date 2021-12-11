@@ -21,6 +21,7 @@ export const LogoLink = styled(Link)`
   justify-content: center;
   align-content: center;
   text-decoration: none;
+  padding: 2px;
 
   &:hover {
     text-decoration: none;
