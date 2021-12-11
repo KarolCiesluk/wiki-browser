@@ -40,15 +40,15 @@ const LanguagesDrawer = () => {
         </DrawerHeader>
 
         <LanguagesList>
-          {availableLanguages?.map(language => (
+          {availableLanguages?.map(({ key, code, name }) => (
             <ListItem key={nanoid()}>
               <StyledLink
                 to={goToOtherLanguage({
-                  key: language.key,
-                  languageCode: language.code,
+                  key,
+                  languageCode: code,
                 })}
               >
-                {language.name}
+                {name}
               </StyledLink>
             </ListItem>
           ))}
