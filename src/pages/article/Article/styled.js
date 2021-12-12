@@ -23,3 +23,8 @@ export const LanguageButton = styled.button`
     background-color: ${({ theme }) => theme.palette.action.hover};
   }
 `;
+
+export const StyledIframe = styled.iframe`
+  border: 1px solid ${({ theme }) => theme.palette.grey[200]};
+  border-radius: ${({ theme }) => theme.shape.borderRadius}px;
+`;

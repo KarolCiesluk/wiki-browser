@@ -19,7 +19,7 @@ import {
 } from "../articleSlice";
 import { useToggleShowLanguages } from "./useToggleShowLanguages";
 import { languageQueryName } from "./languageQueryName";
-import { ArticleTitle, LanguageButton } from "./styled";
+import { ArticleTitle, LanguageButton, StyledIframe } from "./styled";
 
 const Article = () => {
   const { title } = useParams();
@@ -61,7 +61,7 @@ const Article = () => {
         {article?.title}
       </ArticleTitle>
 
-      <iframe
+      <StyledIframe
         title="Wikipedia article"
         src={article?.html_url}
         width="100%"
