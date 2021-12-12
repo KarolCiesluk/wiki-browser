@@ -15,7 +15,7 @@ https://karolciesluk.github.io/wiki-browser/
 
 ## Description
 
-The Wiki Browser is an app based on [Media Wiki REST_API](https://www.mediawiki.org/wiki/API:REST_API/Reference) that allows you to search wikipedia articles. Currently only search for articles in english is available.
+The Wiki Browser is an app based on [MediaWiki REST_API](https://www.mediawiki.org/wiki/API:REST_API/Reference) that allows you to search wikipedia articles. Currently only search for articles in english is available.
 
 You have possibility to view:
 - List of articles with short description and miniature images.
@@ -49,7 +49,7 @@ The Wiki Browser app was made as a recruitment task for the [Intive Patronage Pr
 
 Since it's a recruitment task my intention was to show usage of as many technologies as possible and to present the whole spectrum of my abilities and skills.
 
-At the same time I am aware of the fact that it's possible to utilize more simple solutions. Especially I mean usage of React Redux and Redux-Saga technologies. Fetching data from [Media Wiki REST_API](https://www.mediawiki.org/wiki/API:REST_API/Reference) can be done with `useEffect` hook only.
+At the same time I am aware of the fact that it's possible to utilize more simple solutions. Especially I mean usage of React Redux and Redux-Saga technologies. Fetching data from [MediaWiki REST_API](https://www.mediawiki.org/wiki/API:REST_API/Reference) can be done with `useEffect` hook only.
 
 Therefore I've decided to add a little example of how it can be done on branch "fetchWithoutReduxAndSaga" in [src/pages/article](https://github.com/KarolCiesluk/wiki-browser/tree/fetchWithoutReduxAndSaga/src/pages/article) folder.
 
@@ -74,7 +74,7 @@ If the list is longer than 12 items it will get divided into smaller parts and p
 ### Article
 In order to read chosen article you have to click on article's tile.
 
-Because `html` provided by [Media Wiki REST_API](https://www.mediawiki.org/wiki/API:REST_API/Reference#Get_HTML) has own styling I've decided to use `<iframe />` tag to make sure that the styles don't leak into my app.
+Because `html` provided by [MediaWiki REST_API](https://www.mediawiki.org/wiki/API:REST_API/Reference#Get_HTML) has own styling I've decided to use `<iframe />` tag to make sure that the styles don't leak into my app.
 
 Additionally you can switch to other language (if available) by clicking on the language icon next to the article title.
 
